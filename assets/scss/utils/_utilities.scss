@@ -1,0 +1,23 @@
+// ===============================
+// ✍️ Typography Utilities
+// 自訂文字大小，對應 _variables.scss 中的 $text-* 變數
+// 用於更精確的字體規範 (e.g. .text-xl = 20px)
+// ===============================
+.text-xxl { font-size: $text-xxl !important; } // 28px
+.text-xl  { font-size: $text-xl !important; }  // 20px
+.text-lg  { font-size: $text-lg !important; }  // 18px
+.text-md  { font-size: $text-md !important; }  // 16px
+.text-sm  { font-size: $text-sm !important; }  // 14px
+.text-xs  { font-size: $text-xs !important; }  // 12px
+
+
+// ===============================
+// ⭕ Radius Utilities
+// 自訂圓角，對應 _variables.scss 中的 $border-radius-* 變數
+// 讓你可以用更語意化的 class (.round-s / .round-full)
+// ===============================
+.round-s    { border-radius: $border-radius !important; }       // 4px
+.round-m    { border-radius: $border-radius-sm !important; }    // 8px
+.round-l    { border-radius: $border-radius-lg !important; }    // 12px
+.round-xl   { border-radius: $border-radius-xl !important; }    // 16px
+.round-full { border-radius: $border-radius-pill !important; }  // 完全圓形
