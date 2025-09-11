@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:meta";
+@import "bootstrap/scss/functions";
 // ===============================
 // 🎨 Colors - 顏色系統
 // 自訂色票，並覆蓋 Bootstrap 的主題顏色
@@ -44,7 +47,7 @@ $secondary: $gray-600 !default;
 
 // 新增配對用
 $palette: (
-  primary: (
+  "primary": (
     50:  $primary-50,
     100: $primary-100,
     200: $primary-200,
@@ -57,7 +60,7 @@ $palette: (
     900: $primary-900,
     950: $primary-950
   ),
-  gray: (
+  "gray": (
     50:   $gray-50,
     100:  $gray-100,
     200:  $gray-200,
@@ -102,6 +105,17 @@ $font-family-sans-serif: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", R
 $font-family-heading:    "Noto Sans TC", sans-serif !default;
 $font-family-handwriting: "辰宇落雁體", cursive !default;
 
+/* 手機預設 */
+.hd-title {
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 1.2;
+  @media (min-width: 576px) {
+    font-size: 96px;
+  }
+}
+
+
 // Heading 字號
 $font-size-xxxl: 60px !default;
 $font-size-xxl:  40px !default;
@@ -110,6 +124,15 @@ $font-size-lg:   2rem !default;  // 32px
 $font-size-md:   28px !default;
 $font-size-sm:   24px !default;
 $font-size-xs:   20px !default;
+$h1-font-size: $font-size-xxxl !default;
+$h2-font-size: $font-size-xxl !default;
+$h3-font-size: $font-size-xl !default;
+$h4-font-size: $font-size-lg !default;
+$h5-font-size: $font-size-md !default;
+$h6-font-size: $font-size-sm !default;
+
+
+$headings-font-weight: 700 !default;
 
 // Label 字號
 $label-lg: 18px !default;
