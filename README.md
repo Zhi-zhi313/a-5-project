@@ -12,7 +12,7 @@
 - `npm install` - 初次下載該範例專案後，需要使用 npm install 來安裝套件
 - `npm run dev` - 執行開發模式
   - 若沒有自動開啟瀏覽器，可嘗試手動在瀏覽器上輸入 `http://localhost:5173/A-5-PROJECT/pages/index.html`
-- `npm ru deploy` - 自動化部署
+- `npm run deploy` - 自動化部署
 
 ## 資料夾結構
   - assets # 靜態資源放置處
