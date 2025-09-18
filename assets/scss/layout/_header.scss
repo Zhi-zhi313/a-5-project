@@ -14,7 +14,12 @@ html {
 
   animation: navbar-background-change forwards;
   animation-timeline: --page-scroll; /* 將動畫綁定到 --page-scroll 滾動時間軸 */
-  animation-range: 0px 80px; /* 動畫由頂部 0px 往下滾動 80px 後完成 */
+  animation-range: 0px 50px; /* 動畫由頂部 0px 往下滾動 80px 後完成 */
+  animation: navbar-background-change1 forwards;
+  animation-timeline: --page-scroll; /* 將動畫綁定到 --page-scroll 滾動時間軸 */
+  animation-range: 50px 100px; /* 動畫由頂部 0px 往下滾動 80px 後完成 */
+
+  animation-timing-function: ease-in;
 }
 
 @keyframes navbar-background-change {
@@ -25,9 +30,20 @@ html {
   to {
     /* 100% 狀態 */
     background-color: var(--bg-primary-700) ;
+    opacity: 0.5;
   }
 }
-
+@keyframes navbar-background-change1 {
+  from {
+    /* 0% 狀態 */
+    background-color: var(--bg-primary-700) ;
+    opacity: 0.5;
+  }
+  to {
+    /* 100% 狀態 */
+    background-color: var(--bg-primary-700) ;
+  }
+}
 .size-90x24 {
   width: 122px;
   // height: 56px;
