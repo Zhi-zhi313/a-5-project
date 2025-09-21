@@ -1,3 +1,14 @@
 .index-title {
   font-size: 100px;
 }
+.bg-fortest {
+  width: 100%;
+  height: 1080px;
+  background-image: url('/assets/images/index/bg-1.png');
+}
+
+.help-fab:hover{ box-shadow: 0 10px 28px rgba(0,0,0,.22); }
+
+/* 行動裝置：避開瀏海安全區 */
+.end-3{ right: max(1rem, env(safe-area-inset-right)); }
+.bottom-3{ bottom: max(1rem, env(safe-area-inset-bottom)); }
