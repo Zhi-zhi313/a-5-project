@@ -1,0 +1,191 @@
+@use "sass:map";
+@use "sass:meta";
+@import "bootstrap/scss/functions";
+// ===============================
+// 🎨 Colors - 顏色系統
+// 自訂色票，並覆蓋 Bootstrap 的主題顏色
+// ===============================
+
+// Primary 色票
+$primary-50:  #efcfe8 !default;
+$primary-100: #fff9c2 !default;
+$primary-200: #fff089 !default;
+$primary-300: #ffe45f !default;
+$primary-400: #fdcc12 !default;
+$primary-500: #ecb206 !default;
+$primary-600: #cc8902 !default;
+$primary-700: #a36105 !default;
+$primary-800: #864c0d !default;
+$primary-900: #723e11 !default;
+$primary-950: #431f05 !default;
+
+// Gray 階層
+$gray-0:    #ffffff !default;
+$gray-50:   #f2f2f2 !default;
+$gray-100:  #dbdbdb !default;
+$gray-200:  #c4c4c4 !default;
+$gray-300:  #adadad !default;
+$gray-400:  #969696 !default;
+$gray-500:  #808080 !default;
+$gray-600:  #666666 !default;
+$gray-700:  #4d4d4d !default;
+$gray-800:  #333333 !default;
+$gray-900:  #1a1a1a !default;
+$gray-1000: #000000 !default;
+
+// 功能性色
+$success: #486c15 !default;
+$danger:  #d3282b !default;
+$info:    #008ca5 !default;
+$light:   $gray-50 !default;
+$dark:    $gray-900 !default;
+
+// 覆蓋 Bootstrap 主題色
+$primary:   $primary-500 !default;
+$secondary: $gray-600 !default;
+
+
+// 新增配對用
+$palette: (
+  "primary": (
+    50:  $primary-50,
+    100: $primary-100,
+    200: $primary-200,
+    300: $primary-300,
+    400: $primary-400,
+    500: $primary-500,
+    600: $primary-600,
+    700: $primary-700,
+    800: $primary-800,
+    900: $primary-900,
+    950: $primary-950
+  ),
+  "gray": (
+    50:   $gray-50,
+    100:  $gray-100,
+    200:  $gray-200,
+    300:  $gray-300,
+    400:  $gray-400,
+    500:  $gray-500,
+    600:  $gray-600,
+    700:  $gray-700,
+    800:  $gray-800,
+    900:  $gray-900,
+  )
+);
+
+// prefix像是text,bg,border / name像是primary,gray / step像是50,100...
+@mixin gen-color-utilities($palette, $prefix, $property) {
+  @each $name, $scale in $palette {
+    @each $step, $value in $scale {
+      .#{$prefix}-#{$name}-#{$step} { #{$property}: #{$value} !important; }
+    }
+  }
+}
+
+// 產出 .text-oo-xx / .bg-oo-xx
+@include gen-color-utilities($palette, 'text', 'color');
+@include gen-color-utilities($palette, 'bg',   'background-color');
+
+// 產出 .border-oo-xx
+@include gen-color-utilities($palette, 'border', 'border-color');
+
+// 產出 .border-oo 使用實線或虛線
+.border-solid { border-style: solid !important; }
+.border-dashed { border-style: dashed !important; }
+
+
+// ===============================
+// ✍️ Typography - 字體設定
+// 包含字體族群、字號、行高
+// ===============================
+
+// 字體族群
+$font-family-sans-serif: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-heading:    "Noto Sans TC", sans-serif !default;
+$font-family-handwriting: "辰宇落雁體", cursive !default;
+
+/* 手機預設 */
+.hd-title {
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 1.2;
+  @media (min-width: 576px) {
+    font-size: 96px;
+  }
+}
+
+
+// Heading 字號
+$font-size-xxxl: 60px !default;
+$font-size-xxl:  40px !default;
+$font-size-xl:   36px !default;
+$font-size-lg:   2rem !default;  // 32px
+$font-size-md:   28px !default;
+$font-size-sm:   24px !default;
+$font-size-xs:   20px !default;
+$h1-font-size: $font-size-xxxl !default;
+$h2-font-size: $font-size-xxl !default;
+$h3-font-size: $font-size-xl !default;
+$h4-font-size: $font-size-lg !default;
+$h5-font-size: $font-size-md !default;
+$h6-font-size: $font-size-sm !default;
+
+
+$headings-font-weight: 700 !default;
+
+// Label 字號
+$label-lg: 18px !default;
+$label-md: 16px !default;
+$label-sm: 14px !default;
+$label-xs: 12px !default;
+
+// Body 文字大小
+$text-xxl: 28px !default;
+$text-xl:  20px !default;
+$text-lg:  18px !default;
+$text-md:  16px !default;
+$text-sm:  14px !default;
+$text-xs:  12px !default;
+
+// 行高
+$line-height-tight:   1.2 !default;
+$line-height-relaxed: 1.5 !default;
+
+
+// ===============================
+// 📐 Spacing - 間距系統
+// 完全覆蓋 Bootstrap 的 $spacers
+// 可用於 p-* / m-* class
+// ===============================
+$spacer: 1rem !default; // 基準 = 16px
+
+$spacers: (
+  0: 0,
+  1: $spacer * .25,  // 4px
+  2: $spacer * .5,   // 8px
+  3: $spacer * .75,  // 12px
+  4: $spacer,        // 16px
+  5: $spacer * 1.5,  // 24px
+  6: $spacer * 2,    // 32px
+  7: $spacer * 2.5,  // 40px
+  8: $spacer * 3,    // 48px
+  9: $spacer * 3.5,  // 56px
+  10: $spacer * 4,     // 64px
+  11: $spacer * 5 ,   // 80px
+  12: $spacer * 6.25 ,   // 100px
+  13: $spacer * 7.5 ,   // 120px 
+) !default;
+
+
+// ===============================
+// ⭕ Radius - 圓角系統
+// 覆蓋 Bootstrap 的圓角變數
+// 可用於 .rounded-* class
+// ===============================
+$border-radius:      .25rem !default; // 4px
+$border-radius-sm:   .5rem  !default; // 8px
+$border-radius-lg:   .75rem !default; // 12px
+$border-radius-xl:   1rem   !default; // 16px
+$border-radius-xxl:  2rem   !default; // 32px
+$border-radius-pill: 50rem  !default; // 超大，做圓角 (膠囊 / 圓形)

@@ -1,0 +1,21 @@
+// ===============================
+// ✍️ Custom Fonts
+// 自訂字型載入與字體工具類別
+// ===============================
+
+// 1) 手寫字體：辰宇落雁體
+// - 來源：專案內的 /assets/fonts/ChenYuluoyan-2.0-Thin.ttf
+// - 使用方式：在任何元素加上 .font-handwriting class
+@font-face {
+  font-family: "辰宇落雁體";
+  src: url("../fonts/ChenYuluoyan-2.0-Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// 2) 字體工具類別
+// - .font-handwriting → 套用手寫字體（變數 $font-family-handwriting）
+// - 變數定義在 _variables.scss 中
+.font-handwriting {
+  font-family: $font-family-handwriting;
+}
