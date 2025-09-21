@@ -19,6 +19,10 @@ $primary-800: #864c0d !default;
 $primary-900: #723e11 !default;
 $primary-950: #431f05 !default;
 
+:root {
+  --primary-700: #{$primary-700};
+}
+
 // Gray 階層
 $gray-0:    #ffffff !default;
 $gray-50:   #f2f2f2 !default;
