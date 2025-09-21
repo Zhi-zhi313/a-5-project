@@ -79,3 +79,30 @@ html {
 .offcanvas-header-hd{
   padding: 4px 12px;
 }
+.px-m-16{
+  margin-left: -16px !important;
+  margin-right: -16px !important;
+}
+.link-white{
+  color: white !important;
+}
+.nav-dropdown-btn{
+  padding: 8px 16px;
+  background-color: transparent;
+  border: none;
+  color: white
+}
+.dropdown-toggle::after{
+  width: 14px;
+  height: 8px;
+  background: url(/assets/images/header/triangle-arrow-down-wh.png) no-repeat center / contain;
+  margin-left: 12px;
+  vertical-align: 0.1em;
+}
+.dropdown-menu-shift{
+  margin-left: 80px;
+  border-radius: 12px;
+  padding: 4px;
+  margin-top: 4px !important;
+  border: 0;
+}

@@ -1,43 +1,65 @@
 <nav class="navbar navbar-hd navbar-expand-md fixed-top">
   <div class="container-fluid align-items-center">
-    <a class="" href="index.html">
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <a class="" href="index.html">
         <img src="/assets/images/header/logo-img+text.png" alt="Logo-巷弄派對" class="size-90x24">
-    </a>
-    <button class="navbar-toggler navbar-toggler-hd navbar-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon toggler-icon-hd"></span>
-    </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header offcanvas-header-hd">
-        <img src="/assets/images/header/logo-img+bktext.png" alt="Logo-巷弄派對" class="offcanvas-title size-90x24" id="offcanvasNavbarLabel">
-        <button type="button" class="btn-close offcanvas-icon-hd" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </a>
+      <ul class="d-none d-md-flex navbar-nav gap-5">
+        <li class="nav-item"><a href="" class="nav-link link-white fs-md py-2 px-4">派對時光</a></li>
+        <li class="nav-item"><a href="" class="nav-link link-white fs-md py-2 px-4">場地介紹</a></li>
+        <li class="nav-item"><a href="" class="nav-link link-white fs-md py-2 px-4">線上預訂</a></li>
+        <li class="dropdown">
+          <button type="button" class="dropdown-toggle nav-dropdown-btn fs-md" data-bs-toggle="dropdown"
+            aria-expanded="false" data-bs-offset="10,20">
+            更多
+          </button>
+          <ul class="dropdown-menu dropdown-menu-shift">
+            <li><a class="dropdown-item fs-md text-black px-4 py-2" href="#">關於我們</a></li>
+            <li><a class="dropdown-item fs-md text-black px-4 py-2" href="#">常見問題</a></li>
+            <li><a class="dropdown-item fs-md text-black px-4 py-2" href="guildline.html">guildline</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a class="d-none d-md-block text-decoration-none link-white" href=""><img
+          src="/assets/images/header/icon-user-notlogin.png" class="me-1" alt="">登入 / 註冊</a>
+
+      <button class="navbar-toggler navbar-toggler-hd navbar-dark" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon toggler-icon-hd"></span>
+      </button>
       </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="guildline.html">guildline</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header offcanvas-header-hd border-1 border-bottom border-gray-100">
+          <img src="/assets/images/header/logo-img+bktext.png" alt="Logo-巷弄派對" class="offcanvas-title size-90x24"
+            id="offcanvasNavbarLabel">
+          <button type="button" class="btn-close offcanvas-icon-hd" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between py-7 d-md-none">
+          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 fs-sm">
+            <li class="nav-item w-100 text-center">
+              <a class="nav-link py-5 w-100 link-dark" href="#">派對時光</a>
+            </li>
+            <li class="nav-item w-100 text-center">
+              <a class="nav-link py-5 w-100 link-dark" href="#">場地介紹</a>
+            </li>
+            <li class="nav-item w-100 text-center">
+              <a class="nav-link py-5 w-100 link-dark" href="#">線上預訂</a>
+            </li>
+            <li class="nav-item w-100 text-center">
+              <a class="nav-link py-5 w-100 link-dark" href="#">關於我們</a>
+            </li>
+            <li class="nav-item w-100 text-center">
+              <a class="nav-link py-5 w-100 link-dark" href="#">常見問題</a>
+            </li>
+            <li class="nav-item w-100 text-center">
+              <a class="nav-link py-5 w-100 link-dark" href="guildline.html">guildline</a>
+            </li>
+          </ul>
+          <a class="py-10 text-center text-decoration-none link-dark border-1 border-top border-gray-200 fs-xs px-m-16"
+            href="#">登入 / 註冊</a>
+        </div>
       </div>
-    </div>
+    
   </div>
 </nav>
