@@ -7,6 +7,7 @@
 - 可以自建dev-ooxx,確定正常後,於github發PR給負責人整合
 - 有問題可以於github中建立issue,提出問題供大家檢查,亦可於discord中提出
 - 更新vite.config.js內 base: '/a-5-project/' (9/12 Hugh)
+- 更新footer,header (9/21 Hugh)
 
 ## 指令列表
 - `npm install` - 初次下載該範例專案後，需要使用 npm install 來安裝套件
