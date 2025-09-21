@@ -1,4 +1,18 @@
-.footer{
-  background: #69F0AE;
-  font-size: 64px;
+.footer-icon-1{
+  width: 118px;
+  @media (min-width:768px){
+    width: 150px;
+  }
+}
+.footer-icon-2{
+  width: 100px;
+  @media (min-width:768px){
+    width: 235px;
+  }  
+}
+.p-20px{
+  padding: 20px;
+}
+.gap-20px{
+  gap: 20px;
 }
