@@ -90,17 +90,6 @@ $palette: (
 // 產出 .border-oo-xx
 @include gen-color-utilities($palette, 'border', 'border-color');
 
-// 可以在css變數中使用var(--prefix-name-step)
-:root {
-  @each $name, $scale in $palette {
-    @each $step, $value in $scale {
-      --text-#{$name}-#{$step}: #{$value};
-      --bg-#{$name}-#{$step}: #{$value};
-      --border-#{$name}-#{$step}: #{$value};
-    }
-  }
-}
-
 // 產出 .border-oo 使用實線或虛線
 .border-solid { border-style: solid !important; }
 .border-dashed { border-style: dashed !important; }

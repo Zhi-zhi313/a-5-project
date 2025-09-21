@@ -1,7 +1,42 @@
+<<<<<<< HEAD
+$bp-md: 1024px;
+
+/* 三張卡片：1296×420；左右間距 48；卡片垂直間距 48  */
+.concerns{
+  --total: 1296px;
+  --right: 636px;
+  --gap-col: 120px;    /*  改成 120，三張卡片都用這個間距 */
+  --gap-col: 48px;   /* 全部 48 */
+  --gap-row: 48px;   /*  三張之間 48 */
+  --h: 420px;
+  --text-w: 516px;
+  --text-h: 105px; 
+  --radius: 24px;
+  --pad-block: 100px; /* 上下各 100 ⇒ 200 */
+  --fz-title-d: 36px;  /* 標題 */
+  --fz-body-d: 20px;   /* 內文 */
+  --lh-title-d: 120%;  /* 對應 43px */
+  --lh-body-d: 150%;   /* 對應 30px */
+  --text-gap-desktop: 12px;/* 文字間距 */
+  
+  /* 手機字級（可再調） */
+  --fz-title-m: 24px;
+  --fz-body-m: 16px;
+  --lh-title-m: 1.3;
+  --lh-body-m: 1.6;
+
+  padding-block: var(--pad-block);
+  padding-inline: clamp(24px, (100vw - var(--total))/2, 312px);
+  display: grid;
+  row-gap: var(--gap-row);
+  height: calc(3 * var(--h) + 2 * var(--gap-row) + 2 * var(--pad-block));
+  box-sizing: border-box;
+=======
 .index-title {
   font-size: 100px;
 }
 .bg-fortest {
+>>>>>>> 23ea507f8ceadd9a34708b39ece79c3edd7960aa
   width: 100%;
   height: 1080px;
   background-image: url('/assets/images/index/bg-1.png');
