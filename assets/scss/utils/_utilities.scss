@@ -3,12 +3,12 @@
 // 自訂文字大小，對應 _variables.scss 中的 $text-* 變數
 // 用於更精確的字體規範 (e.g. .text-xl = 20px)
 // ===============================
-.text-xxl { font-size: $text-xxl !important; } // 28px
-.text-xl  { font-size: $text-xl !important; }  // 20px
-.text-lg  { font-size: $text-lg !important; }  // 18px
-.text-md  { font-size: $text-md !important; }  // 16px
-.text-sm  { font-size: $text-sm !important; }  // 14px
-.text-xs  { font-size: $text-xs !important; }  // 12px
+.fs-xxl { font-size: $text-xxl !important; } // 28px
+.fs-xl  { font-size: $text-xl !important; }  // 20px
+.fs-lg  { font-size: $text-lg !important; }  // 18px
+.fs-md  { font-size: $text-md !important; }  // 16px
+.fs-sm  { font-size: $text-sm !important; }  // 14px
+.fs-xs  { font-size: $text-xs !important; }  // 12px
 
 
 // ===============================
