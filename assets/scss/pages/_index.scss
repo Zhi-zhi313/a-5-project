@@ -1,3 +1,485 @@
-.index-title {
-  font-size: 100px;
+$bp-md: 1024px;
+
+/* 三張卡片：1296×420；左右間距 48；卡片垂直間距 48  */
+.concerns{
+  --total: 1296px;
+  --right: 636px;
+  --gap-col: 120px;    /*  改成 120，三張卡片都用這個間距 */
+  --gap-col: 48px;   /* 全部 48 */
+  --gap-row: 48px;   /*  三張之間 48 */
+  --h: 420px;
+  --text-w: 516px;
+  --text-h: 105px; 
+  --radius: 24px;
+  --pad-block: 100px; /* 上下各 100 ⇒ 200 */
+  --fz-title-d: 36px;  /* 標題 */
+  --fz-body-d: 20px;   /* 內文 */
+  --lh-title-d: 120%;  /* 對應 43px */
+  --lh-body-d: 150%;   /* 對應 30px */
+  --text-gap-desktop: 12px;/* 文字間距 */
+  
+  /* 手機字級（可再調） */
+  --fz-title-m: 24px;
+  --fz-body-m: 16px;
+  --lh-title-m: 1.3;
+  --lh-body-m: 1.6;
+
+  padding-block: var(--pad-block);
+  padding-inline: clamp(24px, (100vw - var(--total))/2, 312px);
+  display: grid;
+  row-gap: var(--gap-row);
+  height: calc(3 * var(--h) + 2 * var(--gap-row) + 2 * var(--pad-block));
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;      /* 讓整段最多 1920 寬 */
+  margin-inline: auto;    /* 水平置中 */
+  height: calc(3 * var(--h) + 2 * var(--gap-row) + 2 * var(--pad-block)); /* 1556 */
+  box-sizing: border-box;
+
+  width: 100vw;                    /* 視窗 1920 時就是 1920 */
+  
+}
+
+.concerns__title {
+  font-size: var(--fz-title-d);
+  width: 100%;        /* 會等於 516px (父層寬) */
+  height: 43px;       /*  精準 43 */
+  line-height: 43px;  /* 跟高度一致，量測會顯示 43 */
+  margin: 0;          /* 避免預設外距造成 48 */
+  padding: 0;
+  display: block;
+  white-space: normal;      /* 多行 */
+  overflow: hidden;         /* 保險：內容太長不撐高 */
+  text-overflow: ellipsis;  /* 超出顯示 … ，可拿掉 */
+}
+h1, h2, h3, h4, h5, h6, p { margin: 0; }
+.concerns__desc {
+  font-size: var(--fz-body-d);
+  width: 100%;       /* = 516px（父層寬） */
+  height: 30px;      /* 精準 30 */
+  line-height: 30px; /*  用行高撐到 30 */
+  margin: 0;         /* 清掉 p 預設外距 */
+  padding: 0;
+  display: block;
+  white-space: normal;     /* 多行 */
+  font-size: 20px;         /*  內文字級 */
+  white-space: nowrap;     /* 不換行 */
+  overflow: hidden;        /* 多餘隱藏（避免溢到右邊）*/
+  text-overflow: clip;     /* 不要 …，要就改成 ellipsis */
+}
+
+
+.concerns__row{
+  display: grid;
+  grid-template-columns:
+    calc(var(--total) - var(--right) - var(--gap-col))  /* 612 */
+    var(--right);                                       /* 636 */
+  column-gap: var(--gap-col);                           /* 48 */
+  align-items: center;
+  max-width: var(--total);
+  height: var(--h);
+  margin-inline: auto;
+   min-height: 0;  
+}
+
+.concerns__row--reverse{
+  grid-template-columns:
+    var(--right)
+    calc(var(--total) - var(--right) - var(--gap-col));
+}
+
+.concerns__text{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: var(--text-w); 
+  height: var(--text-h);
+  max-width: 100%;
+  min-height: var(--text-h);
+  justify-self: start; 
+  align-self: center;
+  justify-content: center;
+  padding: 0;                 /* 文字盒本身不留上下內距 */
+  gap: var(--text-gap-desktop); /* 只用 gap 控制「標題↔內文」距離 */
+}
+
+.concerns h3.concerns__title,
+.concerns p.concerns__desc{
+  margin-block: 0;            /* 上下 0 */
+  padding-block: 0;           /* 上下 0（保險） */
+}
+
+.concerns__media{
+  width: var(--right); height: var(--h);
+  min-height: var(--h);  
+  display:grid; place-items:center; justify-self:end;
+  border-radius: var(--radius); overflow:hidden;
+  img{ width:100%; height:100%; object-fit:contain; display:block; }
+  display: block;                 /* 去 baseline */
+  inline-size: 100%;
+  block-size: 100% ;    /* 壓過任何 height:auto */
+  object-fit: contain;
+}
+
+.concerns__media img{
+  width: 100%;
+  height: 100%;                 /* 跟著容器 420 */
+  max-height: 100%;             /* 再保險一層 */
+  object-fit: contain;
+  display: block;
+}
+
+/* 只影響 concerns 區塊 */
+.concerns figure{ margin:0; }
+
+/* 桌機：媒體框固定 636×420，圖片絕對定位塞滿它 */
+@media (min-width:769px){
+  .concerns__media{
+    width: 636px;
+    height: 420px;
+    aspect-ratio: 636 / 420;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius, 24px);
+  }
+  .concerns__media > img{
+    position: absolute;
+    inset: 0;
+    width: 100% ;
+    height: 100% ;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+/* Mobile: 375×1128；Card 351×335；Gap: row 32 / col 16  */
+@media (max-width: 768px){
+  .concerns{
+    /* 尺寸與間距 */
+    --side: 12px;
+    padding-inline: var(--side);  /* 左右 12 */
+    padding-top: 29px;            /* 上 29 */
+    padding-bottom: 30px;         /* 下 30 */
+    max-width: 375px;
+    width: 100%;
+    margin-inline: auto;
+    height: 1128px;               /* 精準鎖高 */
+    box-sizing: border-box;
+
+    /* 卡片/文字/圖片尺寸 */
+     --card-w: min(351px, 100%);
+    --card-h: 335px;
+    --gap-row: 32px;   /* 卡與卡 */
+    --gap-col: 16px;   /* 文字與圖 */
+    --text-h: 79px; 
+    --title-h: 29px; 
+    --desc-h: 42px; 
+    --text-gap: 8px;
+    --img-h: 240px;
+    --h: 240px; 
+
+    /* 手機字級 */
+    --fz-title-m: 24px; 
+    --lh-title-m: 29px;
+    --fz-body-m: 14px;  
+    --lh-body-m: 21px;
+
+    display: grid;
+    row-gap: var(--gap-row);
+
+    /* 這兩行就能「沒有 X，也沒有 Y」 */
+    overflow: hidden;                 /* 隱藏兩軸捲動 */
+    -webkit-text-size-adjust: 100%;   /* 避免 iOS 自動放大造成撐高 */
+    text-size-adjust: 100%;
+  }
+
+  .concerns__row,
+  .concerns__row--rev{
+    width: var(--card-w);
+    height: var(--card-h);                        /* 335 = 79 + 16 + 240 */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--text-h) var(--img-h);
+    grid-template-areas: "text" "media";
+    row-gap: var(--gap-col);
+    justify-self: center;
+    margin: 0;
+  }
+
+  .concerns__text{
+    grid-area: text;
+    width: var(--card-w);
+    height: var(--text-h);
+    display: flex;
+    flex-direction: column;
+    gap: var(--text-gap);
+    overflow: hidden; /* 保險：避免文字撐高 */
+    align-items: center; /* 文字置中 */
+    text-align: center;  /* 文字置中 */
+  }
+  .concerns__title{
+    margin: 0;
+    font-size: var(--fz-title-m);
+    line-height: var(--lh-title-m);
+    height: var(--title-h);
+    white-space: normal;   /* 多行 */
+    overflow: hidden; text-overflow: ellipsis;
+  }
+  .concerns__desc{
+    margin: 0;
+    font-size: var(--fz-body-m);
+    line-height: var(--lh-body-m);
+    height: var(--desc-h);
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .concerns__media{
+    grid-area: media;
+    width: var(--card-w);
+    height: var(--img-h) !important;        /* 240 */
+    border-radius: var(--radius, 24px);
+    overflow: hidden;
+    display: grid; 
+    place-items: center;
+  }
+  .concerns__media img{
+    width: 100%;
+    height: 100% !important; 
+    object-fit: contain;
+    display: block;
+  }
+}
+
+/* 全頁面避免橫向捲軸（保留頁面正常直向捲動） */
+html, body { overflow-x: hidden; }
+
+
+
+/* Choose Section (final) */
+/* 桌機：外寬 1920、內寬 1296，總高 1380；Grid=1296×1000；每卡 416×488 */
+
+$choose-total: 1296px;
+$pad-block: 72px;
+$gap: 24px;
+$radius: 24px;
+
+$card-w: 416px;
+$card-h: 488px;
+$thumb-h: 234px;   // 416 * 9 / 16
+$text-h: 174px;
+
+// 外層：1920 寬的版心＋上下 72
+.choose{
+  width: 100vw;
+  max-width: 1920px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding-inline: clamp(24px, (100vw - #{$choose-total})/2, 312px);
+  padding-block: $pad-block;
+  height: 1380px; // 72 + 1000 + 72
+}
+/* ---- Choose title: 圖片 480×108、文字 480×48（不壓到下面）---- */
+.choose__header{
+  width: 480px;
+  height: 108px;                /* 背圖固定 480×108 */
+  margin: 0 auto 32px;
+  position: relative;
+  display: flex;
+  align-items: center;          /* 讓文字垂直置中到 108 的框裡 */
+  justify-content: center;
+  isolation: isolate;           /* 建立獨立疊層，避免覆蓋下方卡片 */
+}
+
+.choose__title-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;          /* 依比例完整顯示底圖 */
+  pointer-events: none;         /* 不攔截滑鼠事件 */
+  z-index: 0;                   /* 在文字底下 */
+}
+
+/* 文字 480×48 */
+.choose__title{
+  position: relative;
+  z-index: 1;                   /* 壓在底圖上 */
+  margin: 0;
+  width: 480px;
+  height: 48px;                 /* ← 文字區高度 48 */
+  line-height: 48px;            /* ← 單行垂直置中 */
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  white-space: nowrap;          /* 單行顯示 */
+}
+
+/* 砍掉舊的 ::before 作法，避免重複或位移 */
+.choose__title::before{ content: none !important; }
+
+/* 手機：等比縮小 */
+@media (max-width: 768px){
+  .choose__header{
+    width: min(480px, 100%);
+    height: auto;
+    aspect-ratio: 480 / 108;
+  }
+  .choose__title{
+    width: 100%;
+    height: auto;
+    line-height: 1.3;
+    white-space: normal;
+    font-size: 28px;
+    text-align: center;
+  }
+}
+
+/* 卡片網格：1296 × 1000（3×2）  */
+.choose__grid{
+  width: $choose-total;
+  height: 1000px;                   // 488 + 24 + 488
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, $card-w);
+  grid-template-rows: $card-h $card-h;
+  column-gap: $gap;
+  row-gap: $gap;
+}
+
+/*  卡片 */
+.choose__item{
+  width: $card-w;
+  height: $card-h;
+  display: grid;
+  grid-template-rows: $thumb-h $text-h 1fr; // 圖 / 文字區 / 預留
+  row-gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* 圖片：固定 416×234（滿版裁切） */
+.choose__media{
+  margin: 0;
+  width: 100%;
+  height: $thumb-h !important;
+  aspect-ratio: initial !important;
+  position: relative;
+  border-radius: $radius;
+  overflow: hidden;
+}
+.choose__media img{
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover; // 不想裁切改 contain
+  display: block;
+}
+
+/* 文字區：精準 416×174 */
+.choose__text{
+  width: 100%;
+  height: $text-h;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+/* 標題：可換行、不中斷 */
+.choose__name{
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 700;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: break-word;
+  word-break: normal;
+  width: 100%;
+  height: auto;
+  min-height: 34px; // 視覺一致
+}
+
+/* 內文：兩行截斷 = 60px */
+.choose__desc{
+  width: 100%;
+  height: 60px;            // 30px * 2
+  margin: 0;
+  font-size: 20px;
+  line-height: 30px;
+  color: #6B6B6B;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 手機（≤768px）：單欄，自然高度  */
+@media (max-width: 768px){
+  .choose{
+    height: auto;
+    padding-inline: 12px;
+    padding-block: 48px;
+  }
+  .choose__header{
+    width: min(480px, 100%);
+    height: auto;
+    aspect-ratio: 480 / 108;
+  }
+  .choose__grid{
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    column-gap: 0;
+    row-gap: 24px;
+  }
+  .choose__item{
+    width: 100%;
+    height: auto;
+    grid-template-rows: auto auto 1fr;
+  }
+  .choose__media{
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  .choose__text{ height: auto; }
+  .choose__desc{
+    height: auto;
+    line-height: 1.7;
+    -webkit-line-clamp: unset;
+  }
+}
+
+
+
+
+
+/* 手機：不要鎖死，回到自然高度 */
+@media (max-width: 768px){
+  .choose__item{ height: auto; grid-template-rows: auto auto; }
+  .choose__media{ height: auto !important; aspect-ratio: 16/9 !important; }
+  .choose__text{ height: auto; }
+}
+/* 手機可改回自適應（可選） */
+@media (max-width: 768px) {
+  .choose__desc {
+    width: 100%;
+    height: auto;
+    line-height: 1.7;
+    -webkit-line-clamp: unset;
+  }
 }
