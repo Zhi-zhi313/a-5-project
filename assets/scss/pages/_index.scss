@@ -464,10 +464,6 @@ $text-h: 174px;
   }
 }
 
-
-
-
-
 /* 手機：不要鎖死，回到自然高度 */
 @media (max-width: 768px){
   .choose__item{ height: auto; grid-template-rows: auto auto; }
@@ -482,4 +478,33 @@ $text-h: 174px;
     line-height: 1.7;
     -webkit-line-clamp: unset;
   }
+}
+
+.contact-icon {
+  background-color: transparent;
+  border: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url('/assets/images/header/help-btn.png');
+  &:not(.is-open):hover {
+    background-image: url('/assets/images/header/help-btn-hover.png');
+  }
+}
+.contact-icon.is-open{
+  background-image: url('/assets/images/header/help-btn-close.png');
+}
+.h-220px{
+  height: 220px;
+}
+.mb-152px{
+  margin-bottom: 152px;
+}
+.qrframe{
+  top: -20px;
+  left: 30px;
+  border: 12px solid transparent;             /* 定義邊界厚度 */
+  border-radius: 12px;                        /* 如果需要圓角 */
+  border-image-source: url('/assets/images/header/help-btn-frame.png');      /* 框線圖片 */
+  border-image-slice: 12 fill;                /* 切 12px，fill 代表中間填滿 */
+  border-image-repeat: round;                 /* 邊框平鋪方式，可改 stretch / repeat */
 }
