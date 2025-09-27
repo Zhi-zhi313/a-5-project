@@ -656,7 +656,6 @@ $text-h: 174px;
 // 首頁swiper
 .headerSwiper {
   width: 100%;
-
   .swiper-slide {
     color: white;
     text-align: center;
@@ -741,4 +740,62 @@ $text-h: 174px;
       font-size: 28px !important;
     }
   }
+}
+
+.indexSwiper{
+  width: 100%;
+  .swiper-slide{
+    width: 320px;
+    height: 211px;
+  }
+  @media (min-width: 1024px){
+    .swiper-slide{
+      width: 636px;
+      height: 420px;
+      .h7{
+        font-size: 28px;
+      }
+      time,span{
+        font-size: 16px !important;
+      }
+    }
+  }
+}
+.news-img-01,.news-img-02,.news-img-03,.news-img-04,.news-img-05{
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.news-img-01{
+  background-image: url('/assets/images/index/news-01.png');
+}
+.news-img-02{
+  background-image: url('/assets/images/index/news-02.png');
+}
+.news-img-03{
+  background-image: url('/assets/images/index/news-03.png');
+}
+.news-img-04{
+  background-image: url('/assets/images/index/news-04.png');
+}
+.news-img-05{
+  background-image: url('/assets/images/index/news-05.png');
+}
+.news-mask{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.btn-sm-outline-white{
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 12px;
+  background: transparent;
+  transition: all 0.5s;
+}
+.btn-sm-outline-white:hover{
+  color: black;
+  background-color: white;
 }
