@@ -600,7 +600,8 @@ $text-h: 174px;
 
 
 //浮動按鈕設定
-.contact-icon, .contact-icon.collapsed {
+.contact-icon,
+.contact-icon.collapsed {
   width: 80px;
   height: 80px;
   border: 0;
@@ -616,30 +617,185 @@ $text-h: 174px;
   background-image: url('/assets/images/header/help-btn-close.png');
   border: 0;
 }
+
 .mb-152px {
   margin-bottom: 152px;
 }
+
 .card-body {
   width: 374px;
   height: 220px;
 }
 
-.qrframe{
+.qrframe {
   // background: white;
   top: -24px;
   left: 28px;
   width: 320px;
-  border: 12px solid transparent; /* 邊框厚度，依照圖片毛邊的寬度調整 */
+  border: 12px solid transparent;
+  /* 邊框厚度，依照圖片毛邊的寬度調整 */
   border-image-source: url('/assets/images/header/help-btn-frame.png');
-  border-image-slice: 24 fill;        /* 切入點 (像素或百分比)，依框圖內容調 */
-  border-image-repeat: stretch;  /* 邊拉伸 */
-  border-image-width: 24px;      /* 寬度要對應上面 border */
-  border-radius: 12px;           /* 若原圖有圓角可加 */
-  padding: 12px;                 /* 內距避免內容貼邊 */
+  border-image-slice: 24 fill;
+  /* 切入點 (像素或百分比)，依框圖內容調 */
+  border-image-repeat: stretch;
+  /* 邊拉伸 */
+  border-image-width: 24px;
+  /* 寬度要對應上面 border */
+  border-radius: 12px;
+  /* 若原圖有圓角可加 */
+  padding: 12px;
+  /* 內距避免內容貼邊 */
 
-  img{
+  img {
     width: 128px;
     height: 128px;
     object-fit: contain;
-  }            
+  }
+}
+
+// 首頁swiper
+.headerSwiper {
+  width: 100%;
+  .swiper-slide {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-pagination{
+    bottom: 0;
+    padding: 8px;
+    gap: 4px;
+    display: flex;
+    justify-content: center;
+    @media (min-width: 1024px){
+      padding: 24px;
+      gap: 8px;
+    }
+  }
+.swiper-button-next,
+.swiper-button-prev {
+  width: auto;     /* 避免被固定寬度 */
+  height: auto;
+}
+   .swiper-button-prev::after,.swiper-button-next::after{
+    content: "";
+    width: 56px;
+    height: 56px;
+    display: inline-block;
+    border-radius: 1000px;
+    border: 2px solid white;
+    
+  } 
+  .swiper-button-prev::after{
+   background: url('/assets/images/header/angle-left.png') center/24px 24px no-repeat; 
+  }
+  .swiper-button-next::after{
+   background: url('/assets/images/header/angle-right.png') center/24px 24px no-repeat; 
+  }
+}
+
+.headerSwiper .swiper-pagination-bullet {
+  width: 7.67px;
+  height: 2px;
+  margin: 0 !important;
+    @media (min-width: 1024px){
+  width: 18.67px;
+  height: 4px;
+    }  
+  border-radius: 4px;
+  opacity: 0.7;
+  background: white;
+}
+
+.headerSwiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.title-setting {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 1.2;
+
+  @media (min-width: 1024px) {
+    font-size: 96px;
+
+    p {
+      font-size: 28px !important;
+    }
+  }
+}
+
+.indexSwiper{
+  width: 100%;
+  .swiper-slide{
+    width: 320px;
+    height: 211px;
+  }
+  @media (min-width: 1024px){
+    .swiper-slide{
+      width: 636px;
+      height: 420px;
+      .h7{
+        font-size: 28px;
+      }
+      time,span{
+        font-size: 16px !important;
+      }
+    }
+  }
+}
+.news-img-01,.news-img-02,.news-img-03,.news-img-04,.news-img-05{
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.news-img-01{
+  background-image: url('/assets/images/index/news-01.png');
+}
+.news-img-02{
+  background-image: url('/assets/images/index/news-02.png');
+}
+.news-img-03{
+  background-image: url('/assets/images/index/news-03.png');
+}
+.news-img-04{
+  background-image: url('/assets/images/index/news-04.png');
+}
+.news-img-05{
+  background-image: url('/assets/images/index/news-05.png');
+}
+.news-mask{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.btn-sm-outline-white{
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 12px;
+  background: transparent;
+  transition: all 0.5s;
+}
+.btn-sm-outline-white:hover{
+  color: black;
+  background-color: white;
 }
