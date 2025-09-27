@@ -1,3 +1,4 @@
+@use "sass:map";
 // ===============================
 // ✍️ Typography Utilities
 // 自訂文字大小，對應 _variables.scss 中的 $text-* 變數
@@ -27,4 +28,12 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 1.2;
+}
+
+/* 版心容器：手機吃滿寬，桌機最多 1320px，左右留 12px 白邊 */
+.container-narrow {
+  width: 100%;          /* 小螢幕先吃滿父層寬 */
+  max-width: 1320px;    /* 最寬不要超過 1320px（=內容寬1296 + 左右12+12） */
+  margin-inline: auto;  /* 水平置中 */
+  padding-inline: map.get($spacers, 3); /* 左右各 12px，避免內容貼邊 */
 }

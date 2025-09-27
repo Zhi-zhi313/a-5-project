@@ -656,6 +656,7 @@ $text-h: 174px;
 // 首頁swiper
 .headerSwiper {
   width: 100%;
+
   .swiper-slide {
     color: white;
     text-align: center;
@@ -674,36 +675,44 @@ $text-h: 174px;
     height: 100%;
     object-fit: cover;
   }
-  .swiper-pagination{
+
+  .swiper-pagination {
     bottom: 0;
     padding: 8px;
     gap: 4px;
     display: flex;
     justify-content: center;
-    @media (min-width: 1024px){
+
+    @media (min-width: 1024px) {
       padding: 24px;
       gap: 8px;
     }
   }
-.swiper-button-next,
-.swiper-button-prev {
-  width: auto;     /* 避免被固定寬度 */
-  height: auto;
-}
-   .swiper-button-prev::after,.swiper-button-next::after{
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: auto;
+    /* 避免被固定寬度 */
+    height: auto;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
     content: "";
     width: 56px;
     height: 56px;
     display: inline-block;
     border-radius: 1000px;
     border: 2px solid white;
-    
-  } 
-  .swiper-button-prev::after{
-   background: url('/assets/images/header/angle-left.png') center/24px 24px no-repeat; 
+
   }
-  .swiper-button-next::after{
-   background: url('/assets/images/header/angle-right.png') center/24px 24px no-repeat; 
+
+  .swiper-button-prev::after {
+    background: url('/assets/images/header/angle-left.png') center/24px 24px no-repeat;
+  }
+
+  .swiper-button-next::after {
+    background: url('/assets/images/header/angle-right.png') center/24px 24px no-repeat;
   }
 }
 
@@ -711,10 +720,12 @@ $text-h: 174px;
   width: 7.67px;
   height: 2px;
   margin: 0 !important;
-    @media (min-width: 1024px){
-  width: 18.67px;
-  height: 4px;
-    }  
+
+  @media (min-width: 1024px) {
+    width: 18.67px;
+    height: 4px;
+  }
+
   border-radius: 4px;
   opacity: 0.7;
   background: white;
@@ -742,50 +753,67 @@ $text-h: 174px;
   }
 }
 
-.indexSwiper{
+.indexSwiper {
   width: 100%;
-  .swiper-slide{
+
+  .swiper-slide {
     width: 320px;
     height: 211px;
   }
-  @media (min-width: 1024px){
-    .swiper-slide{
+
+  @media (min-width: 1024px) {
+    .swiper-slide {
       width: 636px;
       height: 420px;
-      .h7{
+
+      .h7 {
         font-size: 28px;
       }
-      time,span{
+
+      time,
+      span {
         font-size: 16px !important;
       }
     }
   }
 }
-.news-img-01,.news-img-02,.news-img-03,.news-img-04,.news-img-05{
+
+.news-img-01,
+.news-img-02,
+.news-img-03,
+.news-img-04,
+.news-img-05 {
   width: 100%;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
-.news-img-01{
+
+.news-img-01 {
   background-image: url('/assets/images/index/news-01.png');
 }
-.news-img-02{
+
+.news-img-02 {
   background-image: url('/assets/images/index/news-02.png');
 }
-.news-img-03{
+
+.news-img-03 {
   background-image: url('/assets/images/index/news-03.png');
 }
-.news-img-04{
+
+.news-img-04 {
   background-image: url('/assets/images/index/news-04.png');
 }
-.news-img-05{
+
+.news-img-05 {
   background-image: url('/assets/images/index/news-05.png');
 }
-.news-mask{
+
+.news-mask {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
 }
-.btn-sm-outline-white{
+
+.btn-sm-outline-white {
   font-size: 14px;
   font-weight: 500;
   color: white;
@@ -795,7 +823,604 @@ $text-h: 174px;
   background: transparent;
   transition: all 0.5s;
 }
-.btn-sm-outline-white:hover{
+
+.btn-sm-outline-white:hover {
   color: black;
   background-color: white;
+}
+
+
+.index-title {
+  font-size: 100px;
+}
+
+/* components/_title.scss */
+/* components/_title.scss（或確保在 Bootstrap 後載入） */
+
+/* 手機（基準） */
+.title-bg {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-size: 24px;
+  /* 手機就定 24px */
+  line-height: 1.2;
+  padding-block: 24px;
+  /* 手機的上下內距 */
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../assets/images/index/title-bg.png") center/100% 100% no-repeat;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+/* 桌機 ≥992px 放大 */
+@include media-breakpoint-up(lg) {
+  .title-bg {
+    font-size: 40px;
+    padding-block: 30px;
+  }
+}
+
+
+
+/* 48px 圓框 + 24px 圖示，延續你現在的設定 */
+#heroCarousel .carousel-control-prev,
+#heroCarousel .carousel-control-next {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  opacity: 1;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include media-breakpoint-up(lg) {
+    width: 3rem;
+  }
+}
+
+#heroCarousel .carousel-control-prev {
+  left: 16px;
+}
+
+#heroCarousel .carousel-control-next {
+  right: 16px;
+}
+
+/* 把預設 SVG 關掉，改用你的圖片 */
+#heroCarousel .carousel-control-prev-icon,
+#heroCarousel .carousel-control-next-icon {
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  /* 或 100% 100% */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 指向你的檔案路徑（透明底 PNG 或 SVG 都可） */
+#heroCarousel .carousel-control-prev-icon {
+  background-image: url('/assets/images/header/angle-left.png');
+  /* 或 .svg */
+}
+
+#heroCarousel .carousel-control-next-icon {
+  background-image: url("/assets/images/header/angle-right.png");
+}
+
+
+
+
+/* pages/_index.scss 或 components/_bubble.scss */
+/* =============== 預定導購：泡泡文字（mobile-first） =============== */
+
+/* 手機（基準）：只留文字 */
+.bubble-bg {
+  position: relative;
+  /* ← 要有，桌機才好放 ::before */
+  font-size: 14px;
+  line-height: 24px;
+  padding-block: 24px;
+  text-align: center;
+  margin-inline: auto;
+  max-width: 34rem;
+
+  &::before {
+    content: none;
+  }
+
+  /* 手機不顯示泡泡 */
+}
+
+/* 桌機 ≥992px：恢復泡泡底圖 */
+@include media-breakpoint-up(lg) {
+  .bubble-bg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    line-height: 1.6;
+    padding-block-start: 120px;
+    padding-block-end: 136px;
+    padding-left: 77px;
+    padding-right: 51px;
+    text-align: start;
+    margin-inline: 0;
+
+    position: relative;
+    /* ← 再次強調，建立定位/疊層 */
+    z-index: 0;
+    /* ← 讓 ::before 的 -1 在這層底下即可見 */
+  }
+
+  .bubble-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* 路徑請用專案實際可解析的：二選一 */
+    /* 若 CSS 會輸出到 /assets/xxx.css： */
+    background: url("../assets/images/index/bubble.png") center/100% 100% no-repeat;
+    /* 或你有設定 vite 的 base，就用絕對路徑： */
+    /* background: url("/assets/images/index/bubble.png") center/100% 100% no-repeat; */
+
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+
+
+
+/* 透明播放鈕（無底色、無邊框、無焦點黑圈） */
+.play-toggle-ghost {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  line-height: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus,
+  &:active,
+  &:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    /* 移除黑色橢圓 */
+  }
+}
+
+/* 圖示樣式：只有 icon 可見 */
+.play-icon {
+  font-size: 100px;
+  /* 要多大就改這裡 */
+  color: #fff;
+  /* 純白 */
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .35));
+  /* 增加對比 */
+}
+
+/* 播放時把中央按鈕隱藏 */
+.play-toggle-ghost.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease; // 有淡出效果
+}
+
+
+
+/* -----------------------------
+   顆粒外框的評論卡（RWD 自適應）
+------------------------------ */
+.comment-card {
+  /* 可調參數 */
+  border-radius: $border-radius-lg; // 外框 12px
+  --space-xl: 24px;
+  --frame-width: 35px;
+  /* 外框粗細（顆粒框常見 10–14px） */
+  --slice: 32;
+  /* 九宮格切片像素（依素材微調 28–40） */
+
+  /* 外觀：border-image 畫顆粒框 */
+  background: #fff;
+  // border: var(--frame-width) solid transparent;
+  border-radius: var(--radius);
+  border-image-source: url("../assets/images/index/comment.png");
+  border-image-slice: var(--slice);
+  border-image-width: var(--frame-width);
+  border-image-repeat: round;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+
+  /* 佈局 */
+  width: 100%;
+  display: flex;
+  gap: var(--space-xl);
+  align-items: stretch;
+  padding: var(--space-xl);
+  box-sizing: border-box;
+  overflow: visible;
+  /* 不裁內容，避免標題被切 */
+}
+
+/* 行動：直排，圖片高度給舒適值 */
+.comment-media {
+  flex: 0 0 100%;
+}
+
+.comment-media img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: $border-radius-lg; // 內層圖片也 12px
+}
+
+.comment-body {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  /* 標題 / 星等 / 內文 / 底部 */
+  min-width: 0;
+}
+
+/* 文字 */
+.comment-title {
+  margin: 0 0 6px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: $primary-800; // ← 用你定義的 #864c0d
+  font-size: $h6-font-size; // ← 用你定義的 h6 尺寸（24px）
+}
+
+.comment-text {
+  font-size: $text-md; // 16px
+  line-height: $line-height-relaxed; // 1.5 (=150%)
+}
+
+.comment-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: $gray-1000; // #000000
+  padding: 3px 0; // 上下 3px，左右 0
+}
+
+.comment-meta .avatar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-meta .avatar img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 桌機：橫排，圖寬 ~42%，等高（與中間卡一致） */
+@media (min-width: 992px) {
+  .comment-media {
+    flex: 0 0 42%;
+  }
+
+  .comment-media img {
+    height: 100%;
+    min-height: 220px;
+  }
+
+  .reviews-section .comment-card {
+    min-height: 280px;
+  }
+
+  /* 看設計 260–300 可調 */
+}
+
+/* -----------------------------
+   Reviews 區塊：容器放大 + 間距 + 左右凸出
+------------------------------ */
+
+/* 比 container-narrow 更寬（若已有 container-xl，可略過此段） */
+.container-xl {
+  max-width: 1320px;
+  /* 依設計改 1200/1320/1440 */
+  margin-inline: auto;
+  padding-inline: var(--bs-gutter-x, .75rem);
+}
+
+/* 卡片間距固定 24px */
+.reviews-gutter {
+  --bs-gutter-x: 24px;
+  --bs-gutter-y: 24px;
+}
+
+/* 讓 row 能超出容器（做凸出） */
+.overflow-visible {
+  overflow: visible;
+}
+
+/* 桌機把左右卡片各推出去（bleed） */
+@media (min-width: 992px) {
+  .reviews-section {
+    --bleed-x: 330px;
+  }
+
+  /* 想更凸就加大：48/64/80… */
+
+  .bleed-left {
+    margin-left: calc(var(--bleed-x) * -1);
+  }
+
+  .bleed-right {
+    margin-right: calc(var(--bleed-x) * -1);
+  }
+}
+
+/* 讓三張都等高 */
+.reviews-section .comment-card {
+  height: 100%;
+}
+
+.reviews-section .comment-meta {
+  margin-top: auto;            /* ★ 重點：往下推到底 */
+}
+
+/* -----------------------------
+   修正手機版評價卡 (reviewsSwiper) 直排/跑位
+   只作用在 <992px swiper 那組，不影響桌機
+------------------------------ */
+@media (max-width: 992px) {
+  .reviewsSwiper {
+
+    /* slide 與卡片：維持 636px，避免被壓扁 */
+    .swiper-slide {
+      width: 636px;
+      display: flex;
+      box-sizing: border-box;
+    }
+
+    .comment-card {
+      width: 636px;
+      display: flex;
+      flex-direction: column;
+      /* 重要：避免被外層的 writing-mode 等樣式繼承 */
+      writing-mode: horizontal-tb;
+    }
+
+    /* 文字區塊：確保走水平書寫、可換行、寬度正常撐開 */
+    .comment-body,
+    .comment-title,
+    .comment-text,
+    .comment-stars,
+    .comment-meta {
+      writing-mode: horizontal-tb !important;
+      text-orientation: mixed !important;
+      white-space: normal !important;
+      overflow: visible;
+    }
+
+    /* 圖片：不拉伸，寬度佔滿；高度依內容自然長度 */
+    .comment-media img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      /* 或 contain，看你桌機用哪個就跟哪個 */
+      display: block;
+    }
+
+    /* 若有任何通用樣式把內文字級/行高設極小，這裡保底一下（可調整或刪除） */
+    .comment-title {
+      line-height: 1.3;
+    }
+
+    .comment-text {
+      line-height: 1.6;
+    }
+  }
+}
+
+/* 假設你某區是 vertical-rl，避免影響到 reviews 區塊 */
+.some-vertical-section .reviews-section,
+.some-vertical-section .reviews-section * {
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+}
+
+
+/* ========== 星等（圖片版） ========== */
+.comment-stars {
+  --star-size: 20px;
+  /* 星星大小，可改 16/20/24... */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  /* 星星與數字的間距 */
+}
+
+.comment-stars .stars {
+  display: inline-flex;
+  gap: 3.5px;
+  /* 星星彼此的間距 */
+}
+
+.comment-stars .star {
+  width: var(--star-size);
+  height: var(--star-size);
+  display: inline-block;
+  background: url("../assets/images/index/star.png") center/contain no-repeat;
+}
+
+/* ========== 手機（<992px）：Swiper 左右滑；卡片固定 636px ========== */
+.reviewsSwiper {
+  padding-inline: 16px;
+
+  /* 兩側留白，看起來比較好滑，可調 */
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    width: 636px;
+    /* ★ 固定每張 636px */
+    display: flex;
+  }
+
+  .comment-card {
+    /* 讓卡片填滿 slide，尺寸沿用桌機 */
+    width: 636px;
+    height: auto;
+  }
+
+  /* 確保圖片不被拉伸（保持你原本桌機的比例與裁切方式） */
+  .comment-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* 若你桌機用 cover 就留著；用 contain 就改成 contain */
+  }
+}
+
+/* ========== 桌機（≥992px）：一排三張；不要壓縮卡片；超出就凸出容器即可 ========== */
+@media (min-width: 992px) {
+
+  /* 讓 row 變成單排、不換行；保留你原本的 gutter 間距 */
+  .reviews-section .row.reviews-gutter {
+    display: flex;
+    flex-wrap: nowrap;
+    /* 不換行 */
+    align-items: stretch;
+    gap: var(--bs-gutter-x, 24px);
+    overflow: visible;
+    /* 允許卡片凸出容器 */
+  }
+
+  /* 取消 Bootstrap 欄位的百分比寬，改用「包內容寬度」 */
+  .reviews-section .row.reviews-gutter>[class*="col-"] {
+    width: auto !important;
+    /* ★ 關鍵：不吃 25%/50%/25% 的欄寬 */
+    flex: 0 0 auto !important;
+    /* 跟著內容（卡片）寬度走 */
+  }
+
+  /* 卡片固定 636px（與手機一致） */
+  .reviews-section .comment-card {
+    width: 636px;
+    /* ★ 固定寬，不被欄位壓縮 */
+  }
+}
+
+/* ===== 手機版 (<992px) 調整評價卡尺寸 & 文字大小 ===== */
+/* ===== 手機版 (<992px) 固定卡片高度 ===== */
+@media (max-width: 992px) {
+  .reviewsSwiper {
+    /* 你可以調整這組參數 */
+    --card-w: 257px;
+    /* 卡片寬：可改 320/360/420... */
+    --card-h: 400px;
+    /* ★ 卡片高：你要固定 400px */
+    --card-pad: 20px;
+    /* 內距 */
+    --gap: 4px;
+    /* 區塊間距 */
+    --thumb-h: 162px;
+    /* 上方圖片高度，可依版面調整 */
+    --title-fz: 18px;
+    /* 標題字級 h5 */
+    --text-fz: 14px;
+    /* 內文字級 */
+    --meta-fz: 12px;
+    /* 作者 / 時間 等小字 */
+
+    padding-inline: 12px;
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      width: var(--card-w);
+      height: var(--card-h);
+      /* ★ 固定 slide 高度 */
+      display: flex;
+    }
+
+    .comment-card {
+      width: var(--card-w);
+      height: var(--card-h);
+      /* ★ 固定卡片高度 */
+      padding: var(--card-pad);
+      box-sizing: border-box;
+      /* 包含 padding / border */
+      overflow: hidden;
+      /* 超出裁掉，避免撐高 */
+      display: grid;
+      /* 用 Grid 排版 */
+      grid-template-rows:
+        var(--thumb-h)
+        /* 圖片固定高 */
+        auto
+        /* 標題 + 星星 */
+        1fr
+        /* 內文撐滿剩餘空間 */
+        auto;
+      /* 底部 meta */
+      row-gap: var(--gap);
+      writing-mode: horizontal-tb;
+    }
+
+    /* 圖片 */
+    .comment-media {
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .comment-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* 不想裁切就改 contain */
+      display: block;
+    }
+
+    /* 文字區 */
+    .comment-title {
+      font-size: var(--title-fz);
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .comment-stars {
+      margin-top: 4px;
+    }
+
+    .comment-text {
+      font-size: var(--text-fz);
+      line-height: 1.6;
+      margin: 0;
+      overflow: hidden;
+      /* 限制在 1fr 那格 */
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      /* 想多一點字就調數字或移除 */
+      -webkit-box-orient: vertical;
+    }
+
+    .comment-meta {
+      font-size: var(--meta-fz);
+    }
+  }
 }
