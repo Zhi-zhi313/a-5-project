@@ -5,9 +5,12 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
   <title>index</title>
-  <script type="module" crossorigin src="/a-5-project/assets/main-BPafxcbn.js"></script>
-  <link rel="stylesheet" crossorigin href="/a-5-project/assets/main-CHkrrtQY.css">
+  <script type="module" crossorigin src="/a-5-project/assets/main-D6BIZ5-d.js"></script>
+  <link rel="stylesheet" crossorigin href="/a-5-project/assets/main-rvQhE38I.css">
 </head>
 
 <body>
@@ -75,13 +78,13 @@
       </div>
   </div>
 </nav>
-  <div id="contact-card" class="collapse position-fixed bottom-0 end-0 me-8 z-3 mb-152px">
+    <div id="contact-card" class="collapse position-fixed bottom-0 end-0 me-8 z-3 mb-152px">
   <div class="card round-l overflow-hidden border-0">
     <div class="card-header px-5 py-8 link-white bg-primary-700">
       <h4 class="mb-3">你好 ~ 需要幫忙嗎 ?</h4>
       <p class="fs-xl">加入官方 LINE 安排專員為您解惑</p>
     </div>
-    <div class="card-body h-220px position-relative">
+    <div class="card-body position-relative">
       <div class="qrframe position-absolute text-center">
         <img src="/a-5-project/assets/qrcode-BTDp-ffU.png" alt="巷弄派對QRcode">
         <p>掃描後即可開啟 LINE 進行對話</p>
@@ -91,7 +94,7 @@
 </div>
 
 <button id="contact-btn"
-  class="d-none d-md-block contact-icon position-fixed end-0 bottom-0 me-8 mb-8 z-3"
+  class="d-none d-md-block contact-icon collapsed position-fixed end-0 bottom-0 me-8 mb-8 z-3"
   type="button"
   data-bs-toggle="collapse"
   data-bs-target="#contact-card"
@@ -99,119 +102,500 @@
   aria-expanded="false"
   aria-label="聯絡我們">
 </button>
-<section class="bg-fortest">
+      <!-- 橫幅 -->
+      <section>
+        <!-- Swiper -->
+        <div class="swiper headerSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="position-relative">
+                <img src="/a-5-project/assets/header-01-hPORnv-R.png" alt="">
+                <div class="font-handwriting position-absolute title-setting">最溫馨的私人包場空間</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="position-relative">
+                <img src="/a-5-project/assets/header-02-mGjf1Ama.png" alt="">
+                <div class="font-handwriting position-absolute title-setting">
+                  獨一無二<br>
+                  粉紅聖誕抓周派對開跑
+                  <p class="fs-sm mt-3 NotoSansTC">這個聖誕節，讓小寶寶穿上小聖誕裝，來場充滿驚喜...</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="position-relative">
+                <img src="/a-5-project/assets/header-03-LP_BioDL.png" alt="">
+                <div class="font-handwriting position-absolute title-setting"> 重磅登場 <br> 室內露營風收涎派對
+                  <p class="fs-sm mt-3 NotoSansTC">不用出門也能感受自然感，全新露營文青場地，<br>
+                    融合可愛裝扮、質感帳篷，打造最chill的收涎...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next d-none d-md-flex"></div>
+          <div class="swiper-button-prev d-none d-md-flex"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
 
-</section>
+      <!-- 產品資訊 -->
+      <section class="py-7 py-md-12">
+        <!-- swiper -->
+        <div class="swiper indexSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide news-img-01 round-l position-relative overflow-hidden">
+              <div class="news-mask position-absolute top-0 start-0 w-100 h-100 z-1"></div>
+              <div class="position-absolute p-3 p-md-5 link-white z-2">
+                <div class="h7 mb-1">玫瑰金夢幻性別派對</div>
+                <div class="h7 mb-2">最美時刻 !</div>
+                <time class="fs-sm me-1" datetime="2025/03/08">2025 / 03 / 08</time><span class="fs-sm">發布</span>
+              </div>
+              <button type="submit"
+                class="btn-sm-outline-white position-absolute end-0 bottom-0 me-3 me-md-5 mb-3 mb-md-5 z-2">查看更多</button>
+            </div>
+            <div class="swiper-slide news-img-02 round-l position-relative overflow-hidden">
+              <div class="news-mask position-absolute top-0 start-0 w-100 h-100 z-1"></div>
+              <div class="position-absolute p-3 p-md-5 link-white z-2">
+                <div class="h7 mb-1">2025 / 09 - 12 月抓周、性別派對</div>
+                <div class="h7 mb-2">包場預約中 !</div>
+                <time class="fs-sm me-1" datetime="2025/08/03">2025 / 08 / 03</time><span class="fs-sm">發布</span>
+              </div>
+              <button type="submit"
+                class="btn-sm-outline-white position-absolute end-0 bottom-0 me-3 me-md-5 mb-3 mb-md-5 z-2">查看更多</button>
+            </div>
+            <div class="swiper-slide news-img-03 round-l position-relative overflow-hidden">
+              <div class="news-mask position-absolute top-0 start-0 w-100 h-100 z-1"></div>
+              <div class="position-absolute p-3 p-md-5 link-white z-2">
+                <div class="h7 mb-1">重磅登場</div>
+                <div class="h7 mb-2">室內露營風收涎派對</div>
+                <time class="fs-sm me-1" datetime="2025/07/22">2025 / 07 / 22</time><span class="fs-sm">發布</span>
+              </div>
+              <button type="submit"
+                class="btn-sm-outline-white position-absolute end-0 bottom-0 me-3 me-md-5 mb-3 mb-md-5 z-2">查看更多</button>
+            </div>
+            <div class="swiper-slide news-img-04 round-l position-relative overflow-hidden">
+              <div class="news-mask position-absolute top-0 start-0 w-100 h-100 z-1"></div>
+              <div class="position-absolute p-3 p-md-5 link-white z-2">
+                <div class="h7 mb-1">酷洛米來報到 !</div>
+                <div class="h7 mb-2">主題派對抓周登場</div>
+                <time class="fs-sm me-1" datetime="2025/05/05">2025 / 05 / 05</time><span class="fs-sm">發布</span>
+              </div>
+              <button type="submit"
+                class="btn-sm-outline-white position-absolute end-0 bottom-0 me-3 me-md-5 mb-3 mb-md-5 z-2">查看更多</button>
+            </div>
+            <div class="swiper-slide news-img-05 round-l position-relative overflow-hidden">
+              <div class="news-mask position-absolute top-0 start-0 w-100 h-100 z-1"></div>
+              <div class="position-absolute p-3 p-md-5 link-white z-2">
+                <div class="h7 mb-1">我們在找你</div>
+                <div class="h7 mb-2">招募長期夥伴 !</div>
+                <time class="fs-sm me-1" datetime="2025/07/23">2025 / 07 / 23</time><span class="fs-sm">發布</span>
+              </div>
+              <button type="submit"
+                class="btn-sm-outline-white position-absolute end-0 bottom-0 me-3 me-md-5 mb-3 mb-md-5 z-2">查看更多</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 產品優缺 -->
+      <section id="concerns" class="concerns">
+
+        <!-- 01 左文右圖 -->
+        <div class="concerns__row">
+          <div class="concerns__text">
+            <h5 class="text-primary-800 concerns__title">擔心活動變成一場壓力</h5>
+            <p class=" concerns__desc">第一次準備活動，完全沒頭緒，還要照顧親朋好友與寶寶。</p>
+          </div>
+          <figure class=" concerns__media">
+            <img src="/a-5-project/assets/concerns1-jTdW9n-l.png" alt="擔心活動變成一場壓力插圖" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <!-- 02 左圖右文（反轉） -->
+        <div class="concerns__row concerns__row--reverse">
+          <figure class="concerns__media">
+            <img src="/a-5-project/assets/concerns2-fkafrvz_.png" alt="擔心現場有不認識的人插圖" loading="lazy" decoding="async">
+          </figure>
+          <div class="concerns__text">
+            <h5 class="text-primary-800 concerns__title">擔心現場有不認識的人</h3>
+              <p class=" concerns__desc">許多陌生臉孔，還要特別注意聲響，容易被影響。</p>
+          </div>
+        </div>
+
+        <!-- 03 左文右圖 -->
+        <div class="concerns__row">
+          <div class="concerns__text">
+            <h5 class="text-primary-800 concerns__title">擔心時間不夠</h3>
+              <p class=" concerns__desc">時間很短，還要完成儀式，等親友都到齊。</p>
+          </div>
+          <figure class="concerns__media">
+            <img src="/a-5-project/assets/concerns3-gGSwZnRk.png" alt="擔心時間不夠插圖" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </section>
+
+      <section id="choose" class="choose">
+        <div class="choose__header">
+          <img class="choose__title-img" src="/a-5-project/assets/choose-CPBBzuJ0.png" alt="" aria-hidden="true">
+          <h2 class="choose__title"><span>你可以，選擇「你想要的」</span></h2>
+        </div>
 
 
- <section id="concerns" class="concerns">
-  
-  <!-- 01 左文右圖 -->
-  <div class="concerns__row">
-    <div class="concerns__text">
-      <h5 class="text-primary-800 concerns__title">擔心活動變成一場壓力</h5>
-      <p class=" concerns__desc">第一次準備活動，完全沒頭緒，還要照顧親朋好友與寶寶。</p>
-    </div>
-    <figure class=" concerns__media">
-      <img src="/a-5-project/assets/concerns1-jTdW9n-l.png" alt="擔心活動變成一場壓力插圖" loading="lazy" decoding="async">
-    </figure>
-  </div>
-      
-  <!-- 02 左圖右文（反轉） -->
-  <div class="concerns__row concerns__row--reverse">
-    <figure class="concerns__media">
-      <img src="/a-5-project/assets/concerns2-fkafrvz_.png" alt="擔心現場有不認識的人插圖" loading="lazy" decoding="async">
-    </figure>
-    <div class="concerns__text">
-      <h5 class="text-primary-800 concerns__title">擔心現場有不認識的人</h3>
-      <p class=" concerns__desc">許多陌生臉孔，還要特別注意聲響，容易被影響。</p>
-    </div>
-  </div>
+        <ol class="choose__grid">
+          <li class="choose__item">
+            <figure class="choose__media">
+              <img src="/a-5-project/assets/choose01-ZZRDzExI.png" alt="場地寬敞好聚會">
+            </figure>
+            <div class="choose__text">
+              <h3 class="choose__name">場地寬敞好聚會</h3>
+              <p class="choose__desc">戶外庭院 + 室內空間，最多可容納 25 人，親友聚會舒適不擁擠。</p>
+            </div>
+          </li>
 
-  <!-- 03 左文右圖 -->
-  <div class="concerns__row">
-    <div class="concerns__text">
-      <h5 class="text-primary-800 concerns__title">擔心時間不夠</h3>
-      <p class=" concerns__desc">時間很短，還要完成儀式，等親友都到齊。</p>
-    </div>
-    <figure class="concerns__media">
-      <img src="/a-5-project/assets/concerns3-gGSwZnRk.png" alt="擔心時間不夠插圖" loading="lazy" decoding="async">
-    </figure>
-  </div>
-</section>
+          <li class="choose__item">
+            <figure class="choose__media">
+              <img src="/a-5-project/assets/choose02-CXtyf8j8.png" alt="專業團隊全程支援">
+            </figure>
+            <div class="choose__text">
+              <h3 class="choose__name">專業團隊全程支援</h3>
+              <p class="choose__desc">專業主持搭配默契團隊，活動流程順暢，氣氛溫馨不冷場。</p>
+            </div>
+          </li>
 
-<section id="choose" class="choose">
-  <div class="choose__header">
-    <img class="choose__title-img" src="/a-5-project/assets/choose-CPBBzuJ0.png" alt="" aria-hidden="true">
-    <h2 class="choose__title"><span>你可以，選擇「你想要的」</span></h2>
-  </div>
+          <li class="choose__item">
+            <figure class="choose__media">
+              <img src="/a-5-project/assets/choose03-N91ps8TH.png" alt="獨立包場最安心">
+            </figure>
+            <div class="choose__text">
+              <h3 class="choose__name">獨立包場最安心</h3>
+              <p class="choose__desc">預定時間及包場服務，有效隔離非活動民眾，安全又可靠。</p>
+            </div>
+          </li>
+
+          <li class="choose__item">
+            <figure class="choose__media">
+              <img src="/a-5-project/assets/choose04-C3rrbNA4.png" alt="客製選配最靈活">
+            </figure>
+            <div class="choose__text">
+              <h3 class="choose__name">客製選配最靈活</h3>
+              <p class="choose__desc">攝影、餐點、主持人皆可自由選擇，打造專屬你的儀式派對。</p>
+            </div>
+          </li>
+
+          <li class="choose__item">
+            <figure class="choose__media">
+              <img src="/a-5-project/assets/choose05-xF_WD7IW.png" alt="溫馨老屋有溫度">
+            </figure>
+            <div class="choose__text">
+              <h3 class="choose__name">溫馨老屋有溫度</h3>
+              <p class="choose__desc">老屋風格注入文化底蘊，記錄成長的每個珍貴時刻。</p>
+            </div>
+          </li>
+
+          <li class="choose__item">
+            <figure class="choose__media">
+              <img src="/a-5-project/assets/choose06-BmrAS_hy.png" alt="衛生把關零死角">
+            </figure>
+            <div class="choose__text">
+              <h3 class="choose__name">衛生把關零死角</h3>
+              <p class="choose__desc">場地定期消毒清潔，餐具一次性使用，守護寶寶與賓客的健康安全。</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <div class="container-narrow">
+        <div class="py-12">
+          <!-- 預定導購 -->
+          <section class="container-narrow pb-7 pb-md-12">
+            <div class="text-center pb-5 pb-md-8">
+              <h2 class="title-bg">每個寶寶都值得被好好珍惜</h2>
+            </div>
+            <div class="row g-4 align-items-stretch pb-5 pb-md-8">
+              <!-- 左側：手機置中、桌機靠左；平板起分欄可改成 md 5/7 -->
+              <div class="col-12 col-lg-4 d-flex flex-column gap-4">
+                <p class="bubble-bg mb-lg-5 text-center text-lg-start">
+                  現在就預約，讓我們幫你記錄這一刻<br class="d-md-none"> <!-- ← 手機換行 -->名額有限，熱門檔期快被預約光了!
+                </p>
+
+                <figure class="photo-card mb-0 d-none d-md-block">
+                  <div class="ratio ratio-4x3 rounded-3 overflow-hidden">
+                    <img src="/a-5-project/assets/boy-CHwsD2ED.png" alt="作品示例" class="w-100 h-100 object-fit-cover">
+                  </div>
+                </figure>
+              </div>
+
+              <!-- 右側：Carousel（用 ratio 固定高度；手機隱藏左右箭頭） -->
+              <div class="col-12 col-lg-8 d-flex">
+                <div class="rounded-3 overflow-hidden shadow-sm flex-grow-1">
+                  <div id="heroCarousel" class="carousel slide w-100" data-bs-ride="carousel" data-bs-touch="true"
+                    data-bs-interval="4000">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="1"></button>
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="2"></button>
+                      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="3"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <div class="ratio ratio-4x3">
+                          <img src="/a-5-project/assets/booking-wZ4N9XLw.png" class="d-block w-100 h-100 object-fit-cover"
+                            alt="slide 1">
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="ratio ratio-4x3">
+                          <img src="/a-5-project/assets/booking-wZ4N9XLw.png" class="d-block w-100 h-100 object-fit-cover"
+                            alt="slide 2">
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="ratio ratio-4x3">
+                          <img src="/a-5-project/assets/booking-wZ4N9XLw.png" class="d-block w-100 h-100 object-fit-cover"
+                            alt="slide 3">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 手機隱藏左右箭頭，md 以上顯示 -->
+                    <button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#heroCarousel"
+                      data-bs-slide="prev" aria-label="上一張">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">上一張</span>
+                    </button>
+                    <button class="carousel-control-next d-none d-md-flex" type="button" data-bs-target="#heroCarousel"
+                      data-bs-slide="next" aria-label="下一張">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">下一張</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA：手機滿版、間距較大；桌機維持寬度 -->
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-8 col-lg-8">
+                <a href="#booking" class="btn w-100 bg-primary-400 text-dark rounded-3 px-4 py-3 py-md-4 fw-bold">
+                  立即預約
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- 活動影片 -->
+          <section class="container-narrow pb-7 pb-md-12">
+            <div class="text-center pb-5 pb-md-8 pt-12">
+              <h2 class="title-bg">現場活動影片</h2>
+
+              <div class="position-relative pt-5 pt-md-8">
+                <!-- 圓角要加在這層，並且 overflow-hidden 一起上 -->
+                <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm clip-rounded">
+                  <video id="eventVideo" class="d-block w-100 h-100 object-fit-cover" preload="metadata"
+                    poster="/a-5-project/assets/video-Dh5Sogz3.png" playsinline>
+                    <source src="/a-5-project/assets/demo-DJ37ItUJ.mp4" type="video/mp4" />
+                    您的瀏覽器不支援影片播放
+                  </video>
+                </div>
+
+                <button class="play-toggle-ghost position-absolute top-50 start-50 translate-middle" aria-label="播放">
+                  <i class="bi bi-play-circle play-icon" aria-hidden="true"></i>
+                </button>
 
 
-  <ol class="choose__grid">
-    <li class="choose__item">
-      <figure class="choose__media">
-        <img src="/a-5-project/assets/choose01-ZZRDzExI.png" alt="場地寬敞好聚會">
-      </figure>
-    <div class="choose__text">
-      <h3 class="choose__name">場地寬敞好聚會</h3>
-      <p class="choose__desc">戶外庭院 + 室內空間，最多可容納 25 人，親友聚會舒適不擁擠。</p>
-    </div>
-    </li>
+              </div>
 
-    <li class="choose__item">
-      <figure class="choose__media">
-        <img src="/a-5-project/assets/choose02-CXtyf8j8.png" alt="專業團隊全程支援">
-      </figure>
-    <div class="choose__text">
-      <h3 class="choose__name">專業團隊全程支援</h3>
-      <p class="choose__desc">專業主持搭配默契團隊，活動流程順暢，氣氛溫馨不冷場。</p>
-    </div>
-    </li>
 
-    <li class="choose__item">
-      <figure class="choose__media">
-        <img src="/a-5-project/assets/choose03-N91ps8TH.png" alt="獨立包場最安心">
-      </figure>
-    <div class="choose__text">
-      <h3 class="choose__name">獨立包場最安心</h3>
-      <p class="choose__desc">預定時間及包場服務，有效隔離非活動民眾，安全又可靠。</p>
-    </div>
-    </li>
+            </div>
+          </section>
+          <!-- 產品評價 -->
+          <!-- 產品評價 -->
+          <section class="reviews-section py-10">
+            <div class="container-xl">
 
-    <li class="choose__item">
-      <figure class="choose__media">
-        <img src="/a-5-project/assets/choose04-C3rrbNA4.png" alt="客製選配最靈活">
-      </figure>
-    <div class="choose__text">
-      <h3 class="choose__name">客製選配最靈活</h3>
-      <p class="choose__desc">攝影、餐點、主持人皆可自由選擇，打造專屬你的儀式派對。</p>
-    </div>
-    </li>
+              <!-- 手機：Swiper（< lg 顯示），卡片固定 636px -->
+              <div class="swiper reviewsSwiper d-lg-none">
+                <div class="swiper-wrapper">
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide">
+                    <article class="comment-card h-100">
+                      <div class="comment-media">
+                        <img src="/a-5-project/assets/comment01-mLDLw42w.png" alt="家庭在餐桌旁的合照">
+                      </div>
+                      <div class="comment-body">
+                        <h5 class="comment-title pb-1 pb-md-3">非常喜歡這次的性別派對！</h5>
+                        <div class="comment-stars pb-1 pb-md-3" aria-label="評分 5 分">
+                          <span class="stars" aria-hidden="true">
+                            <span class="star"></span><span class="star"></span><span class="star"></span><span
+                              class="star"></span><span class="star"></span>
+                          </span>
+                          <strong>5.0</strong>
+                        </div>
+                        <p class="comment-text pb-1 pb-md-3">整體氛圍溫馨又有質感，工作人員很貼心，讓整場流程順暢又精采，真的超推！...</p>
+                        <div class="comment-meta">
+                          <div class="avatar">
+                            <img src="/a-5-project/assets/custom01-BO2WozC3.png" alt="">
+                            <span>Judy Chen</span>
+                          </div>
+                          <time datetime="2025-07-13T11:33">2025 / 07 / 13　11:33</time>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
 
-    <li class="choose__item">
-      <figure class="choose__media">
-        <img src="/a-5-project/assets/choose05-xF_WD7IW.png" alt="溫馨老屋有溫度">
-      </figure>
-    <div class="choose__text">
-      <h3 class="choose__name">溫馨老屋有溫度</h3>
-      <p class="choose__desc">老屋風格注入文化底蘊，記錄成長的每個珍貴時刻。</p>
-    </div>
-    </li>
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <article class="comment-card h-100">
+                      <div class="comment-media">
+                        <img src="/a-5-project/assets/comment02-kxBWtzYT.png" alt="親友在派對上慶祝">
+                      </div>
+                      <div class="comment-body">
+                        <h5 class="comment-title pb-1 pb-md-3">服務細心、氣氛到位！</h5>
+                        <div class="comment-stars pb-1 pb-md-3" aria-label="評分 5 分">
+                          <span class="stars" aria-hidden="true">
+                            <span class="star"></span><span class="star"></span><span class="star"></span><span
+                              class="star"></span><span class="star"></span>
+                          </span>
+                          <strong>5.0</strong>
+                        </div>
+                        <p class="comment-text pb-1 pb-md-3">整體氛圍溫馨又有質感，工作人員很貼心，讓整場流程順暢又精采，真的超推！...</p>
+                        <div class="comment-meta">
+                          <div class="avatar">
+                            <img src="/a-5-project/assets/custom02-BsT3oCer.png" alt="">
+                            <span>林姿穎</span>
+                          </div>
+                          <time datetime="2025-07-13T11:33">2025 / 07 / 13　11:33</time>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
 
-    <li class="choose__item">
-      <figure class="choose__media">
-        <img src="/a-5-project/assets/choose06-BmrAS_hy.png" alt="衛生把關零死角">
-      </figure>
-    <div class="choose__text">
-      <h3 class="choose__name">衛生把關零死角</h3>
-      <p class="choose__desc">場地定期消毒清潔，餐具一次性使用，守護寶寶與賓客的健康安全。</p>
-    </div>
-    </li>
-  </ol>
-</section>
+                  <!-- Slide 3 -->
+                  <div class="swiper-slide">
+                    <article class="comment-card h-100">
+                      <div class="comment-media">
+                        <img src="/a-5-project/assets/comment03-8WS1rw6p.png" alt="可愛寶寶寫真">
+                      </div>
+                      <div class="comment-body">
+                        <h5 class="comment-title pb-1 pb-md-3">場地溫馨，很有氛圍！</h5>
+                        <div class="comment-stars pb-1 pb-md-3" aria-label="評分 5 分">
+                          <span class="stars" aria-hidden="true">
+                            <span class="star"></span><span class="star"></span><span class="star"></span><span
+                              class="star"></span><span class="star"></span>
+                          </span>
+                          <strong>5.0</strong>
+                        </div>
+                        <p class="comment-text pb-1 pb-md-3">在這裡辦活動，場地溫馨很好拍，服務也很貼心～...</p>
+                        <div class="comment-meta">
+                          <div class="avatar">
+                            <img src="/a-5-project/assets/custom03-BCSx2HNr.png" alt="">
+                            <span>Andy Chang</span>
+                          </div>
+                          <time datetime="2025-08-03T14:03">2025 / 08 / 03　14:03</time>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <!-- 需要分頁圓點就開啟 -->
+                <!-- <div class="swiper-pagination"></div> -->
+              </div>
 
-     
-    <footer class="footer bg-primary-800">
+              <!-- 桌機：原本一排三張（≥ lg 顯示） -->
+              <div class="row reviews-gutter align-items-stretch overflow-visible d-none d-lg-flex">
+                <!-- 左：3 欄（向左凸出） -->
+                <div class="col-12 col-lg-3 bleed-left">
+                  <article class="comment-card h-100">
+                    <div class="comment-media">
+                      <img src="/a-5-project/assets/comment01-mLDLw42w.png" alt="家庭在餐桌旁的合照">
+                    </div>
+                    <div class="comment-body">
+                      <h5 class="comment-title pb-1 pb-md-3">非常喜歡這次的性別派對！</h5>
+                      <div class="comment-stars pb-1 pb-md-3" aria-label="評分 5 分">
+                        <span class="stars" aria-hidden="true">
+                          <span class="star"></span><span class="star"></span><span class="star"></span><span
+                            class="star"></span><span class="star"></span>
+                        </span>
+                        <strong>5.0</strong>
+                      </div>
+                      <p class="comment-text pb-1 pb-md-3">整體氛圍溫馨又有質感，工作人員很貼心，讓整場流程順暢又精采，真的超推！...</p>
+                      <div class="comment-meta">
+                        <div class="avatar">
+                          <img src="/a-5-project/assets/custom01-BO2WozC3.png" alt="">
+                          <span>Judy Chen</span>
+                        </div>
+                        <time datetime="2025-07-13T11:33">2025 / 07 / 13　11:33</time>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- 中：6 欄 -->
+                <div class="col-12 col-lg-6">
+                  <article class="comment-card h-100">
+                    <div class="comment-media">
+                      <img src="/a-5-project/assets/comment02-kxBWtzYT.png" alt="親友在派對上慶祝">
+                    </div>
+                    <div class="comment-body">
+                      <h5 class="comment-title pb-1 pb-md-3">服務細心、氣氛到位！</h5>
+                      <div class="comment-stars pb-1 pb-md-3" aria-label="評分 5 分">
+                        <span class="stars" aria-hidden="true">
+                          <span class="star"></span><span class="star"></span><span class="star"></span><span
+                            class="star"></span><span class="star"></span>
+                        </span>
+                        <strong>5.0</strong>
+                      </div>
+                      <p class="comment-text pb-1 pb-md-3">整體氛圍溫馨又有質感，工作人員很貼心，讓整場流程順暢又精采，真的超推！...</p>
+                      <div class="comment-meta">
+                        <div class="avatar">
+                          <img src="/a-5-project/assets/custom02-BsT3oCer.png" alt="">
+                          <span>林姿穎</span>
+                        </div>
+                        <time datetime="2025-07-13T11:33">2025 / 07 / 13　11:33</time>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <!-- 右：3 欄（向右凸出） -->
+                <div class="col-12 col-lg-3 bleed-right">
+                  <article class="comment-card h-100">
+                    <div class="comment-media">
+                      <img src="/a-5-project/assets/comment03-8WS1rw6p.png" alt="可愛寶寶寫真">
+                    </div>
+                    <div class="comment-body">
+                      <h5 class="comment-title pb-1 pb-md-3">場地溫馨，很有氛圍！</h5>
+                      <div class="comment-stars pb-1 pb-md-3" aria-label="評分 5 分">
+                        <span class="stars" aria-hidden="true">
+                          <span class="star"></span><span class="star"></span><span class="star"></span><span
+                            class="star"></span><span class="star"></span>
+                        </span>
+                        <strong>5.0</strong>
+                      </div>
+                      <p class="comment-text pb-1 pb-md-3">在這裡辦活動，場地溫馨很好拍，服務也很貼心～...</p>
+                      <div class="comment-meta">
+                        <div class="avatar">
+                          <img src="/a-5-project/assets/custom03-BCSx2HNr.png" alt="">
+                          <span>Andy Chang</span>
+                        </div>
+                        <time datetime="2025-08-03T14:03">2025 / 08 / 03　14:03</time>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+
+
+
+      <footer class="footer bg-primary-800">
     <div class="container p-20px p-md-5">
 <div class="d-flex justify-content-center justify-content-md-between">
     <div class="d-flex justify-content-center">
@@ -240,7 +624,7 @@
     </div>
 </footer>
 
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
-
