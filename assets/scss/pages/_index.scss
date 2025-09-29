@@ -855,7 +855,7 @@ $text-h: 174px;
     content: "";
     position: absolute;
     inset: 0;
-    background: url("../assets/images/index/title-bg.png") center/100% 100% no-repeat;
+    background: url("/assets/images/index/title-bg.png") center/100% 100% no-repeat;
     z-index: -1;
     pointer-events: none;
   }
@@ -971,7 +971,7 @@ $text-h: 174px;
     inset: 0;
     /* 路徑請用專案實際可解析的：二選一 */
     /* 若 CSS 會輸出到 /assets/xxx.css： */
-    background: url("../assets/images/index/bubble.png") center/100% 100% no-repeat;
+    background: url("/assets/images/index/bubble.png") center/100% 100% no-repeat;
     /* 或你有設定 vite 的 base，就用絕對路徑： */
     /* background: url("/assets/images/index/bubble.png") center/100% 100% no-repeat; */
 
@@ -1037,7 +1037,7 @@ $text-h: 174px;
   background: #fff;
   // border: var(--frame-width) solid transparent;
   border-radius: var(--radius);
-  border-image-source: url("../assets/images/index/comment.png");
+  border-image-source: url("/assets/images/index/comment.png");
   border-image-slice: var(--slice);
   border-image-width: var(--frame-width);
   border-image-repeat: round;
@@ -1260,7 +1260,7 @@ $text-h: 174px;
   width: var(--star-size);
   height: var(--star-size);
   display: inline-block;
-  background: url("../assets/images/index/star.png") center/contain no-repeat;
+  background: url("/assets/images/index/star.png") center/contain no-repeat;
 }
 
 /* ========== 手機（<992px）：Swiper 左右滑；卡片固定 636px ========== */
