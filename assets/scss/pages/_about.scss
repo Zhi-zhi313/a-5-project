@@ -1,0 +1,562 @@
+/* -------------------------------
+   🏠 Hero 區域
+----------------------------------*/
+.about__hero {
+    background: url("/assets/images/about/header.png") center / cover no-repeat;
+    text-align: center;
+    padding: map-get($spacers, 13) 0; // 120px × 2
+    position: relative;
+    color: $gray-0; // 白色文字
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba($gray-1000, 0.25);
+        z-index: 0;
+    }
+
+    &-title {
+        position: relative;
+        z-index: 1;
+        font-family: $font-family-handwriting;
+        font-weight: 100;
+        font-size: $font-size-xxxl;
+        line-height: $line-height-tight;
+        color: $gray-0;
+        text-shadow: 0 4px 10px rgba($gray-1000, 0.45);
+        width: 636px;
+        margin: 0 auto;
+        white-space: pre-line;
+    }
+
+    @media (max-width: 767px) {
+        padding: map-get($spacers, 11) 0; // 80px
+
+        &-title {
+            font-size: $font-size-lg; // 32px
+            width: 90%;
+        }
+    }
+}
+
+/* -------------------------------
+   🕰️ 大事記（Timeline Section）
+----------------------------------*/
+.about__timeline {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: map-get($spacers, 10);
+    text-align: center;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 1296px;
+        max-width: calc(100% + 360px);
+        height: 1px;
+        margin: 0 auto;
+        background-color: $gray-200;
+    }
+
+    /* 標題區 */
+    .about__title {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-family-handwriting;
+        font-weight: 100;
+        font-size: 64px;
+        color: $gray-1000;
+        height: 80px;
+        width: 372px;
+        margin: 0 auto map-get($spacers, 11);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 372px;
+            height: 80px;
+            background: url("/assets/images/index/title-bg.png") center / contain no-repeat;
+            z-index: -1;
+        }
+    }
+
+    /* 每一年（桌機版） */
+    .about__year {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        gap: map-get($spacers, 5);
+        margin-bottom: map-get($spacers, 10);
+        text-align: left;
+
+        &::before {
+            content: attr(data-year);
+            font-size: 24px;
+            font-weight: 700;
+            color: $gray-900;
+            flex-shrink: 0;
+            width: 60px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 30px;
+            top: calc(2.4rem + 28px);
+            width: 1px;
+            height: calc(100% - (2.4rem + 28px));
+            background-color: $primary-800;
+            opacity: 0.8;
+        }
+
+        &-content {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: map-get($spacers, 7);
+            position: relative;
+            padding-bottom: map-get($spacers, 6);
+        }
+
+        &-text {
+            flex: 1;
+            width: 611px;
+
+            h3 {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 1.2;
+                color: $gray-1000;
+                margin-bottom: map-get($spacers, 5);
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 1.5;
+                color: $gray-700;
+                margin-bottom: map-get($spacers, 5);
+            }
+        }
+
+        &-images img {
+            width: 484px;
+            max-height: 245px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba($gray-1000, 0.08);
+        }
+
+        .about__btn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border: 1px solid $gray-800;
+            color: $gray-800;
+            background: transparent;
+            padding: 8px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: $gray-800;
+                color: $gray-0;
+            }
+        }
+    }
+}
+
+/* -------------------------------
+📱 手機版大事記（完全依照 Figma 樣式）
+----------------------------------*/
+/* ===============================
+   📱 Mobile (≤767px)
+   =============================== */
+@media (max-width: 767px) {
+
+    /* 外層容器縮排置中 */
+    .about__timeline {
+        padding: map-get($spacers, 8) 0;
+        text-align: center;
+    }
+
+    /* 每一年改成「獨立卡片」 */
+    .about__timeline .about__year {
+        display: block;
+        /* 覆蓋桌機的 flex */
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto map-get($spacers, 10);
+        text-align: center;
+    }
+
+    /* 把左側垂直線隱藏 */
+    .about__timeline .about__year::after {
+        display: none;
+    }
+
+    /* 年份置中，顯示在卡片最上方 */
+    .about__timeline .about__year::before {
+        display: block;
+        position: static;
+        margin-bottom: map-get($spacers, 3);
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        color: $gray-900;
+        width: auto;
+        /* 取消桌機版的固定寬度效果 */
+    }
+
+    /* 主要內容改成直向排列 */
+    .about__timeline .about__year-content {
+        display: flex;
+        flex-direction: column;
+        /* 直向排列 */
+        align-items: center;
+        gap: map-get($spacers, 4);
+        padding-bottom: 0;
+        /* 取消桌機版底部間距，避免多餘空白 */
+    }
+
+    /* ✅ 讓圖片出現在文字上方 */
+    .about__timeline .about__year-images {
+        order: -1;
+        width: 100%;
+    }
+
+    .about__timeline .about__year-images img {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba($gray-1000, 0.1);
+    }
+
+    /* 文字區塊置中、放寬寬度 */
+    .about__timeline .about__year-text {
+        width: 100%;
+        text-align: center;
+        padding: 0 12px;
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: $gray-700;
+            margin-bottom: 12px;
+        }
+    }
+
+    /* 修正：手機版「查看更多」按鈕 */
+    .about__year .about__btn {
+        position: static !important;
+        /* ⛔ 強制覆蓋掉桌機版 absolute */
+        display: inline-block;
+        margin: 12px auto 0;
+        /* 與內文分開 */
+        border: 1px solid $gray-800;
+        background: transparent;
+        color: $gray-800;
+        padding: 10px 24px;
+        border-radius: 8px;
+        font-size: 16px;
+        line-height: 1.2;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba($gray-1000, 0.08);
+
+        &:hover {
+            background: $gray-800;
+            color: $gray-0;
+            box-shadow: 0 4px 10px rgba($gray-1000, 0.15);
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/* -------------------------------
+   👥 團隊介紹（Team Section）
+----------------------------------*/
+.about__team {
+    position: relative;
+    max-width: 1296px;
+    margin: 0 auto;
+    padding: map-get($spacers, 10) map-get($spacers, 4);
+    text-align: center;
+
+    .about__title {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-family-handwriting;
+        font-weight: 100;
+        font-size: 64px;
+        color: $gray-1000;
+        height: 80px;
+        width: 372px;
+        margin: 0 auto map-get($spacers, 9);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 372px;
+            height: 80px;
+            background: url("/assets/images/index/title-bg.png") center / contain no-repeat;
+            z-index: -1;
+        }
+    }
+
+    &-hosts,
+    &-photographers {
+        display: grid;
+        gap: 24px;
+    }
+
+    &-hosts {
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 24px;
+    }
+
+    &-photographers {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .member-card {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba($gray-1000, 0.08);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        &:hover {
+            transform: scale(1.01);
+
+            img {
+                transform: scale(1.05);
+            }
+
+            .overlay {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba($gray-1000, 0.65);
+            color: $gray-0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 32px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+
+            h5 {
+                font-size: 14px;
+                font-weight: 400;
+                margin-bottom: 4px;
+            }
+
+            h4 {
+                font-size: 28px;
+                font-weight: 700;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-family: $font-family-handwriting;
+                font-size: 20px;
+                line-height: 1.5;
+                white-space: pre-line;
+                margin-bottom: 12px;
+            }
+
+            .member-btn {
+                background: $gray-0;
+                color: $gray-900;
+                border-radius: 8px;
+                padding: 8px 16px;
+                font-size: 16px;
+                text-decoration: none;
+            }
+        }
+    }
+
+/* ===============================
+   📱 手機版團隊成員卡片樣式
+   適用範圍：螢幕寬度 ≤ 767px
+   保留 hover 互動效果
+   =============================== */
+@media (max-width: 767px) {
+  
+  /* ---------------------------
+     🎯 Grid 容器設定
+     讓主持人和攝影師區塊改成單欄排列
+  --------------------------- */
+  .about__team-hosts,
+  .about__team-photographers {
+    display: grid !important;              /* 使用 Grid 排版 */
+    grid-template-columns: 1fr !important; /* 單欄排列（每排一張卡片）*/
+    gap: 24px !important;                  /* 卡片之間的間距 */
+  }
+
+  /* ---------------------------
+     🎴 成員卡片容器
+     固定尺寸：最大 351px 寬 × 400px 高
+  --------------------------- */
+  .about__team-hosts .member-card,
+  .about__team-photographers .member-card {
+    position: relative !important;         /* 設為相對定位，讓內部圖片可以絕對定位 */
+    display: block !important;             /* 區塊顯示 */
+    width: 100% !important;                /* 寬度 100%（但不超過 max-width）*/
+    max-width: 351px !important;           /* 最大寬度 351px */
+    height: 400px !important;              /* 固定高度 400px */
+    margin: 0 auto !important;        /* 水平置中 + 底部間距 24px */
+    border-radius: 8px !important;         /* 圓角 8px */
+    overflow: hidden !important;           /* 隱藏超出卡片範圍的內容（裁切圖片）*/
+    box-shadow: 0 2px 8px rgba($gray-1000, 0.08) !important; /* 陰影效果 */
+    background: $gray-0 !important;        /* 白色背景（防止圖片載入時空白）*/
+    cursor: pointer !important;            /* 🖱️ 保持手指游標，表示可點擊 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* ✨ 保留過渡動畫 */
+  }
+
+  /* ---------------------------
+     🖼️ 成員照片
+     使用絕對定位填滿整張卡片
+  --------------------------- */
+  .about__team-hosts .member-card img,
+  .about__team-photographers .member-card img {
+    position: absolute !important;         /* 絕對定位（相對於 .member-card）*/
+    top: 0 !important;                     /* 貼齊頂部 */
+    left: 0 !important;                    /* 貼齊左側 */
+    right: 0 !important;                   /* 貼齊右側 */
+    bottom: 0 !important;                  /* 貼齊底部 */
+    width: 100% !important;                /* 寬度填滿父層 */
+    height: 100% !important;               /* 高度填滿父層 */
+    min-height: 400px !important;          /* 最小高度 400px */
+    max-height: 400px !important;          /* 最大高度 400px */
+    object-fit: cover !important;          /* 裁切填滿，保持比例不變形 */
+    object-position: center !important;    /* 圖片置中對齊 */
+    border-radius: 8px !important;         /* 圓角 8px（與卡片一致）*/
+    transition: transform 0.5s ease !important; /* ✨ 保留圖片放大動畫 */
+  }
+
+  /* ---------------------------
+     ✨ 保留 Hover 效果
+     點擊/觸控時顯示互動效果
+  --------------------------- */
+  .about__team-hosts .member-card:hover,
+  .about__team-photographers .member-card:hover {
+    transform: scale(1.01) !important;     /* 卡片微微放大 */
+    box-shadow: 0 4px 12px rgba($gray-1000, 0.12) !important; /* 陰影加深 */
+  }
+
+  .about__team-hosts .member-card:hover img,
+  .about__team-photographers .member-card:hover img {
+    transform: scale(1.05) !important;     /* 圖片放大 5% */
+  }
+
+  /* ---------------------------
+     📋 顯示成員資訊遮罩層
+     點擊/觸控時顯示成員介紹
+  --------------------------- */
+  .about__team-hosts .member-card .overlay,
+  .about__team-photographers .member-card .overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba($gray-1000, 0.65) !important;
+    color: $gray-0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 32px !important;
+    opacity: 0 !important;                 /* 預設隱藏（透明）*/
+    visibility: hidden !important;         /* 預設不可見 */
+    transition: opacity 0.3s ease, visibility 0.3s ease !important; /* 淡入淡出效果 */
+  }
+
+  /* 📱 Hover 時顯示遮罩層 */
+  .about__team-hosts .member-card:hover .overlay,
+  .about__team-photographers .member-card:hover .overlay {
+    opacity: 1 !important;                 /* 完全顯示 */
+    visibility: visible !important;        /* 變為可見 */
+  }
+
+  /* 🎨 遮罩層內的文字樣式 */
+  .about__team .member-card .overlay h5 {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .about__team .member-card .overlay h4 {
+    font-size: 24px !important;            /* 手機版標題稍微縮小 */
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .about__team .member-card .overlay p {
+    font-family: $font-family-handwriting !important;
+    font-size: 18px !important;            /* 手機版文字稍微縮小 */
+    line-height: 1.5 !important;
+    white-space: pre-line !important;
+    margin-bottom: 12px !important;
+  }
+
+  .about__team .member-card .overlay .member-btn {
+    background: $gray-0 !important;
+    color: $gray-900 !important;
+    border-radius: 8px !important;
+    padding: 8px 16px !important;
+    font-size: 16px !important;
+    text-decoration: none !important;
+  }
+}
+
+
+}
